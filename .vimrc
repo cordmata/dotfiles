@@ -13,17 +13,22 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set hlsearch
+set spell
+colorscheme desert
 set tags=tags,/home/mcordial/pyenvs/asurepo/lib/python2.7/site-packages/tags,/home/mcordial/pyenvs/src/tags
+set wildignore+=*.o,*.obj,.git,*.pyc,*.egg-info,*.vim
 syntax on
-" nmap <silent> <c-t> :TlistToggle<CR>
 nmap <silent> <c-q> :NERDTreeToggle<CR>
 nmap <silent> <c-h> :noh<CR>
 nmap <silent> <c-n> :bn<CR>
 nmap <silent> <c-k> :bp<CR>
 nmap <silent> <c-p> :b#<CR>
+nmap <silent> <c-k> :bp<CR>
 nmap ,s :Gstatus<CR>
 nmap ,c :Gcommit<CR>
-highlight SpellBad term=underline gui=undercurl guisp=Orange 
+
+highlight clear SpellBad
+highlight SpellBad cterm=underline ctermfg=green 
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
