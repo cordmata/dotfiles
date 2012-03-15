@@ -3,6 +3,8 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
 
+let mapleader = ","
+
 syntax on
 colorscheme desert
 
@@ -32,6 +34,7 @@ nmap <silent> <c-h> :noh<CR>
 nmap <silent> <c-n> :bn<CR>
 nmap <silent> <c-p> :bp<CR>
 nmap <silent> <c-k> :b#<CR>
+nmap <silent> <leader>c :bp<CR>:bd #<CR>
 nmap ,s :Gstatus<CR>
 
 autocmd FileType html set ft=htmldjango.html " For SnipMate
