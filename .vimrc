@@ -6,7 +6,7 @@ filetype plugin indent on
 let mapleader = ","
 
 syntax on
-colorscheme desert
+colorscheme jellybeans
 
 highlight clear SpellBad
 highlight SpellBad cterm=underline ctermfg=green 
@@ -24,20 +24,22 @@ set tabstop=8
 set softtabstop=4
 set shiftwidth=4
 set tags=tags,/home/mcordial/pyenvs/asurepo/lib/python2.7/site-packages/tags,/home/mcordial/pyenvs/src/tags
-set wildignore+=*.o,*.obj,.git,*.pyc,*.egg-info,*.vim
+set wildignore+=*.o,*.obj,.git,*.pyc,*.egg-info,*.vim,/home/mcordial/repo/asurepo/static/**
 set backupdir=~/.vim/sessions//
 set directory=~/.vim/sessions//
 set pastetoggle=<F2>
 set backspace=indent,eol,start
 
 nmap <silent> <c-h> :noh<CR>
-nmap <silent> <c-n> :bn<CR>
-nmap <silent> <c-p> :bp<CR>
-nmap <silent> <c-k> :b#<CR>
+nmap <silent> <c-j> :bn<CR>
+nmap <silent> <c-k> :bp<CR>
+nmap <silent> <c-l> :b#<CR>
 nmap <silent> <leader>c :bp<CR>:bd #<CR>
-nmap ,s :Gstatus<CR>
+nmap <leader>s :Gstatus<CR>
+nmap <leader>b :LustyJuggler<CR>
 
 autocmd FileType html set ft=htmldjango.html " For SnipMate
+au BufNewFile,BufReadPost *.coffee,Cakefile,*.eco setl shiftwidth=2 expandtab softtabstop=2
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
