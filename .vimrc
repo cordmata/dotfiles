@@ -35,6 +35,7 @@ nmap <silent> <c-j> :bn<CR>
 nmap <silent> <c-k> :bp<CR>
 nmap <silent> <c-l> :b#<CR>
 nmap <silent> <leader>c :bp<CR>:bd #<CR>
+nmap <silent> <leader>t :TagbarToggle<CR>
 nmap <leader>s :Gstatus<CR>
 nmap <leader>b :LustyJuggler<CR>
 
