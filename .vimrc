@@ -7,9 +7,10 @@ let mapleader = ","
 
 syntax on
 colorscheme jellybeans
+set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 
 highlight clear SpellBad
-highlight SpellBad cterm=underline ctermfg=green 
+highlight SpellBad cterm=underline ctermfg=green
 
 set nocompatible
 set autoindent
@@ -29,6 +30,8 @@ set backupdir=~/.vim/sessions//
 set directory=~/.vim/sessions//
 set pastetoggle=<F2>
 set backspace=indent,eol,start
+set encoding=utf-8
+set laststatus=2   " Always show the statusline
 
 nmap <silent> <c-h> :noh<CR>
 nmap <silent> <c-j> :bn<CR>
@@ -40,7 +43,11 @@ nmap <leader>s :Gstatus<CR>
 nmap <leader>b :LustyJuggler<CR>
 
 autocmd FileType html set ft=htmldjango.html " For SnipMate
+autocmd FileType rst set tw=80
+autocmd BufWritePre * :%s/\s\+$//e " strip trailing whitespace
 au BufNewFile,BufReadPost *.coffee,Cakefile,*.eco setl shiftwidth=2 expandtab softtabstop=2
+
+let g:Powerline_symbols = 'fancy'
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
