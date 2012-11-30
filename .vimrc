@@ -5,8 +5,9 @@ filetype plugin indent on
 
 let mapleader = ","
 
-syntax on
-colorscheme jellybeans
+syntax enable
+set background=dark
+colorscheme solarized
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 
 highlight clear SpellBad
@@ -28,10 +29,12 @@ set tags=tags,/home/mcordial/pyenvs/asurepo/lib/python2.7/site-packages/tags,/ho
 set wildignore+=*.o,*.obj,.git,*.pyc,*.egg-info,*.vim,/home/mcordial/repo/asurepo/static/**
 set backupdir=~/.vim/sessions//
 set directory=~/.vim/sessions//
-set pastetoggle=<F2>
+set pastetoggle=<leader>p
 set backspace=indent,eol,start
 set encoding=utf-8
 set laststatus=2   " Always show the statusline
+" set colorcolumn=80  " Highlight characters extending past column 80 (Vim 7.3)
+match ErrorMsg '\%>80v.\+'  " Highlight characters extending past column 80 (Vim < 7.3)
 
 nmap <silent> <c-h> :noh<CR>
 nmap <silent> <c-j> :bn<CR>
@@ -47,7 +50,8 @@ autocmd FileType rst set tw=80
 autocmd BufWritePre * :%s/\s\+$//e " strip trailing whitespace
 au BufNewFile,BufReadPost *.coffee,Cakefile,*.eco setl shiftwidth=2 expandtab softtabstop=2
 
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
@@ -60,4 +64,3 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
-

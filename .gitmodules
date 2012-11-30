@@ -43,3 +43,9 @@
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/ragtag"]
+	path = .vim/bundle/ragtag
+	url = git://github.com/tpope/vim-ragtag.git
+[submodule ".vim/bundle/solarized"]
+	path = .vim/bundle/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git

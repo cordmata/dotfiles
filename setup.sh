@@ -7,6 +7,7 @@ for f in .* ; do
     [ $f = '..' ] && continue
     [ $f = '.git' ] && continue
     [ $f = '.gitignore' ] && continue
+    [ $f = '.gitmodules' ] && continue
     ln -sfbn $SCRIPTDIR/$f $HOME/$f
     echo "$SCRIPTDIR/$f --> $HOME/$f"
 done
