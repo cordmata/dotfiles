@@ -1,3 +1,4 @@
 .netrwhist
 *.swp
 \.vim/sessions/*
+.zshrc-local

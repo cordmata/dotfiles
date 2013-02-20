@@ -7,8 +7,9 @@ let mapleader = ","
 
 syntax enable
 set background=dark
-colorscheme solarized
+" let g:solarized_termcolors=256
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+colorscheme solarized
 
 highlight clear SpellBad
 highlight SpellBad cterm=underline ctermfg=green
@@ -33,8 +34,8 @@ set pastetoggle=<leader>p
 set backspace=indent,eol,start
 set encoding=utf-8
 set laststatus=2   " Always show the statusline
-" set colorcolumn=80  " Highlight characters extending past column 80 (Vim 7.3)
-match ErrorMsg '\%>80v.\+'  " Highlight characters extending past column 80 (Vim < 7.3)
+set colorcolumn=80  " Highlight characters extending past column 80 (Vim 7.3)
+" match ErrorMsg '\%>80v.\+'  " Highlight characters extending past column 80 (Vim < 7.3)
 
 nmap <silent> <c-h> :noh<CR>
 nmap <silent> <c-j> :bn<CR>
@@ -43,10 +44,25 @@ nmap <silent> <c-l> :b#<CR>
 nmap <silent> <leader>c :bp<CR>:bd #<CR>
 nmap <silent> <leader>t :TagbarToggle<CR>
 nmap <leader>s :Gstatus<CR>
-nmap <leader>b :LustyJuggler<CR>
+nmap <c-b> :CtrlPBuffer<CR>
+nmap <silent> <c-c> :CtrlPClearAllCaches<CR>
+
+" let the command-line act like a shell with emacs bindings
+cnoremap <C-a>  <Home>
+cnoremap <C-b>  <Left>
+cnoremap <C-f>  <Right>
+cnoremap <C-d>  <Delete>
+cnoremap <M-b>  <S-Left>
+cnoremap <M-f>  <S-Right>
+cnoremap <M-d>  <S-right><Delete>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+cnoremap <Esc>d <S-right><Delete>
+cnoremap <C-g>  <C-c>
 
 autocmd FileType html set ft=htmldjango.html " For SnipMate
 autocmd FileType rst set tw=80
+autocmd FileType yaml set sw=2 expandtab softtabstop=2
 autocmd BufWritePre * :%s/\s\+$//e " strip trailing whitespace
 au BufNewFile,BufReadPost *.coffee,Cakefile,*.eco setl shiftwidth=2 expandtab softtabstop=2
 
