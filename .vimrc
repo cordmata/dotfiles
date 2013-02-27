@@ -1,6 +1,26 @@
+set nocompatible
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-ragtag'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'groenewege/vim-less'
+Bundle 'kien/ctrlp.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'ervandew/supertab'
+Bundle 'majutsushi/tagbar'
+Bundle 'Lokaltog/vim-powerline'
+
 filetype plugin indent on
 
 let mapleader = ","
@@ -14,7 +34,6 @@ colorscheme solarized
 highlight clear SpellBad
 highlight SpellBad cterm=underline ctermfg=green
 
-set nocompatible
 set autoindent
 set nowrap
 set hidden
