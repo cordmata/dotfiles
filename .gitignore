@@ -1,10 +1,10 @@
 *
-!.dir_colors  
-!.gitignore 
-!.vim    
+!.dir_colors
+!.gitignore
+!.vim
 !.zshrc
-!.gitmodules 
-!.tmux.conf  
-!.vimrc        
+!.gitmodules
+!.tmux.conf
+!.vimrc
 .vim/bundle/*
 !.vim/bundle/vundle
