@@ -39,7 +39,7 @@ set nowrap
 set hidden
 set hlsearch
 set spell
-set modelines=0
+set modeline
 set expandtab
 set textwidth=0
 set tabstop=8
