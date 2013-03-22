@@ -19,7 +19,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline'
 
 filetype plugin indent on
 
@@ -29,6 +29,7 @@ syntax enable
 set background=dark
 " let g:solarized_termcolors=256
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+set enc=utf-8
 colorscheme solarized
 
 highlight clear SpellBad
@@ -42,7 +43,7 @@ set spell
 set modeline
 set expandtab
 set textwidth=0
-set tabstop=8
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set tags=tags,/home/mcordial/pyenvs/asurepo/lib/python2.7/site-packages/tags,/home/mcordial/pyenvs/src/tags
@@ -60,33 +61,24 @@ nmap <silent> <c-h> :noh<CR>
 nmap <silent> <c-j> :bn<CR>
 nmap <silent> <c-k> :bp<CR>
 nmap <silent> <c-l> :b#<CR>
-nmap <silent> <leader>c :bp<CR>:bd #<CR>
+nmap <silent> <leader>w :bp<CR>:bd #<CR>
 nmap <silent> <leader>t :TagbarToggle<CR>
-nmap <leader>s :Gstatus<CR>
-nmap <c-b> :CtrlPBuffer<CR>
-nmap <silent> <c-c> :CtrlPClearAllCaches<CR>
+nmap <silent> <leader>gs :Gstatus<CR>
+nmap <silent> <leader>v :e $MYVIMRC<CR>
+nmap <leader>sv :source $MYVIMRC<CR>
+nmap <leader>c :CtrlPClearAllCaches<CR>
 
 " let the command-line act like a shell with emacs bindings
 cnoremap <C-a>  <Home>
 cnoremap <C-b>  <Left>
 cnoremap <C-f>  <Right>
 cnoremap <C-d>  <Delete>
-cnoremap <M-b>  <S-Left>
-cnoremap <M-f>  <S-Right>
-cnoremap <M-d>  <S-right><Delete>
-cnoremap <Esc>b <S-Left>
-cnoremap <Esc>f <S-Right>
-cnoremap <Esc>d <S-right><Delete>
-cnoremap <C-g>  <C-c>
 
 autocmd FileType html set ft=htmldjango.html " For SnipMate
-autocmd FileType rst set tw=80
-autocmd FileType yaml set sw=2 expandtab softtabstop=2
 autocmd BufWritePre * :%s/\s\+$//e " strip trailing whitespace
 au BufNewFile,BufReadPost *.coffee,Cakefile,*.eco setl shiftwidth=2 expandtab softtabstop=2
 
-" let g:Powerline_symbols = 'fancy'
-let g:Powerline_symbols = 'unicode'
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
