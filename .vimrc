@@ -4,7 +4,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-unimpaired'
@@ -17,9 +16,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'groenewege/vim-less'
 Bundle 'kien/ctrlp.vim'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'ervandew/supertab'
-Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/powerline'
+Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on
 
@@ -32,6 +30,7 @@ set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 set enc=utf-8
 colorscheme solarized
 
+highlight clear SignColumn
 highlight clear SpellBad
 highlight SpellBad cterm=underline ctermfg=green
 
@@ -39,9 +38,13 @@ set autoindent
 set nowrap
 set hidden
 set hlsearch
+set incsearch
 set spell
+set ruler
 set modeline
 set expandtab
+set splitbelow
+set splitright
 set textwidth=0
 set tabstop=4
 set softtabstop=4
@@ -53,6 +56,7 @@ set directory=~/.vim/sessions//
 set pastetoggle=<leader>p
 set backspace=indent,eol,start
 set encoding=utf-8
+set showcmd       " display incomplete commands
 set laststatus=2   " Always show the statusline
 set colorcolumn=80  " Highlight characters extending past column 80 (Vim 7.3)
 " match ErrorMsg '\%>80v.\+'  " Highlight characters extending past column 80 (Vim < 7.3)
@@ -61,8 +65,13 @@ nmap <silent> <c-h> :noh<CR>
 nmap <silent> <c-j> :bn<CR>
 nmap <silent> <c-k> :bp<CR>
 nmap <silent> <c-l> :b#<CR>
+nnoremap <A-j> <c-w><c-j>
+nnoremap <A-k> <c-w><c-k>
+nnoremap <A-l> <c-w><c-l>
+nnoremap <A-h> <c-w><c-h>
 nmap <silent> <leader>w :bp<CR>:bd #<CR>
 nmap <silent> <leader>t :TagbarToggle<CR>
+nmap <silent> <leader>gg :GitGutterToggle<CR>
 nmap <silent> <leader>gs :Gstatus<CR>
 nmap <silent> <leader>v :e $MYVIMRC<CR>
 nmap <leader>sv :source $MYVIMRC<CR>
@@ -77,7 +86,6 @@ cnoremap <C-d>  <Delete>
 autocmd FileType html set ft=htmldjango.html " For SnipMate
 autocmd BufWritePre * :%s/\s\+$//e " strip trailing whitespace
 au BufNewFile,BufReadPost *.coffee,Cakefile,*.eco setl shiftwidth=2 expandtab softtabstop=2
-
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " Add the virtualenv's site-packages to vim path
@@ -91,3 +99,5 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
+
+source ~/.vimrc-local
