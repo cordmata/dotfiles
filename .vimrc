@@ -16,6 +16,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-vinegar'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'groenewege/vim-less'
 Bundle 'kien/ctrlp.vim'
@@ -25,6 +26,7 @@ Bundle 'delimitMate.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 
 filetype plugin indent on
 
@@ -144,6 +146,10 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol  = '⚡'
 let g:syntastic_style_warning_symbol  = '⚡'
+
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 nnoremap <silent><Leader>n :set invnumber<CR>
 nnoremap <silent><Leader>r :set invrelativenumber<CR>
