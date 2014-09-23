@@ -17,6 +17,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-vinegar'
+Bundle 'tpope/vim-dispatch'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'groenewege/vim-less'
 Bundle 'kien/ctrlp.vim'
@@ -72,8 +73,8 @@ set nofoldenable
 
 set wildmenu                        " Command line autocompletion
 set wildmode=list:longest,full      " Shows all the options
-set wildignore+=*.o,*.obj,.git,*.pyc,*.egg-info,*.vim,/home/mcordial/repo/asurepo/static/**
-set wildignore+=*.pyc,*.egg-info,*.vim
+set wildignore+=*.o,*.obj,.git,*.vim,/home/mcordial/repo/asurepo/static/**
+set wildignore+=*.pyc,*.egg-info/*,*.egg/**
 set wildignore+=/home/mcordial/repo/asurepo/static/**,.idea
 
 set backupdir=~/.vim/sessions//
@@ -102,6 +103,7 @@ nnoremap <silent> <c-l> :b#<CR>
 nnoremap <silent> <leader>w :bp<CR>:bd #<CR>
 nnoremap <silent> <leader>ggt :GitGutterToggle<CR>
 nnoremap <silent> <leader>v :e $MYVIMRC<CR>
+nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
 nnoremap <leader>p :set invpaste<CR>
 
 " let the command-line act like a shell with emacs bindings
@@ -155,10 +157,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 nnoremap <silent><Leader>n :set invnumber<CR>
 nnoremap <silent><Leader>r :set invrelativenumber<CR>
 nnoremap <Leader>cc :CtrlPClearAllCaches<CR>
+nnoremap <leader>f :Ag<Space>
+
+let g:ycm_autoclose_preview_window_after_insertion=1
 
 let g:airline_enable_branch=1
 let g:airline_powerline_fonts=1
 let g:airline_detect_whitespace = 1
+let g:airline_exclude_preview = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 
 source ~/.vimrc-local
