@@ -24,11 +24,20 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'othree/html5.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'delimitMate.vim'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'rking/ag.vim'
+
+" colorschemes
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'nanotech/jellybeans.vim'
+Bundle '29decibel/codeschool-vim-theme'
+Bundle 'morhetz/gruvbox'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'jnurmine/Zenburn'
+Bundle 'zeis/vim-kolor'
 
 filetype plugin indent on
 
@@ -39,11 +48,11 @@ set background=dark
 " let g:solarized_termcolors=256
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 set enc=utf-8
-colorscheme solarized
+colorscheme Tomorrow-Night
 
 highlight clear SignColumn
 highlight clear SpellBad
-highlight SpellBad cterm=underline ctermfg=green
+highlight SpellBad cterm=underline "ctermfg=green
 
 set autoindent
 set nowrap
