@@ -18,9 +18,13 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-vinegar'
 Bundle 'tpope/vim-dispatch'
+Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'mtscout6/vim-cjsx'
+Bundle 'mxw/vim-jsx'
 Bundle 'groenewege/vim-less'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'othree/html5.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'delimitMate.vim'
@@ -30,13 +34,9 @@ Bundle 'honza/vim-snippets'
 Bundle 'rking/ag.vim'
 
 " colorschemes
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'nanotech/jellybeans.vim'
-Bundle '29decibel/codeschool-vim-theme'
 Bundle 'morhetz/gruvbox'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'jnurmine/Zenburn'
 Bundle 'zeis/vim-kolor'
 
 filetype plugin indent on
@@ -44,11 +44,15 @@ filetype plugin indent on
 let mapleader = ","
 
 syntax enable
-set background=dark
-" let g:solarized_termcolors=256
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+set background=dark
 set enc=utf-8
+" colorscheme kolor
+" colorscheme gruvbox
+" colorscheme hybrid
 colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night-Bright
+" colorscheme Tomorrow-Night-Eighties
 
 highlight clear SignColumn
 highlight clear SpellBad
@@ -151,7 +155,12 @@ nnoremap <leader>gi :Git!<Space>
 " for the diffmode
 noremap <leader>du :diffupdate<CR>
 
-let g:ctrlp_extensions = ['tag']
+let g:syntastic_quiet_messages = { "regex": '\m\[E501\]' }
+
+let g:ctrlp_extensions = ['tag', 'funky']
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 let g:syntastic_python_pylint_exe = "pylint2"
 let g:syntastic_error_symbol='✗'
@@ -167,6 +176,9 @@ nnoremap <silent><Leader>n :set invnumber<CR>
 nnoremap <silent><Leader>r :set invrelativenumber<CR>
 nnoremap <Leader>cc :CtrlPClearAllCaches<CR>
 nnoremap <leader>f :Ag<Space>
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 let g:ycm_autoclose_preview_window_after_insertion=1
 
