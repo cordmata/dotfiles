@@ -172,6 +172,9 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+
+command! JSONFormat %!python -m json.tool
+
 nnoremap <silent><Leader>n :set invnumber<CR>
 nnoremap <silent><Leader>r :set invrelativenumber<CR>
 nnoremap <Leader>cc :CtrlPClearAllCaches<CR>
