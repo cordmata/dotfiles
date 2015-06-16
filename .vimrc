@@ -16,7 +16,6 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-vinegar'
 Bundle 'tpope/vim-dispatch'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
@@ -96,7 +95,7 @@ set backspace=indent,eol,start
 set encoding=utf-8
 set showcmd         " display incomplete commands
 set laststatus=2    " Always show the statusline
-set colorcolumn=80  " Highlight characters extending past column 80 (Vim 7.3)
+set colorcolumn=90  " Highlight characters extending past column 80 (Vim 7.3)
 " match ErrorMsg '\%>80v.\+'  " Highlight characters extending past column 80 (Vim < 7.3)
 
 set hlsearch
@@ -182,13 +181,11 @@ nnoremap <leader>f :Ag<Space>
 nnoremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+nnoremap <Leader>g :YcmCompleter GoTo<Cr>
 
 let g:ycm_autoclose_preview_window_after_insertion=1
 
-let g:airline_enable_branch=1
+let g:airline#extensions#branch#enabled=1
 let g:airline_powerline_fonts=1
-let g:airline_detect_whitespace = 1
-let g:airline_exclude_preview = 1
-let g:airline#extensions#hunks#non_zero_only = 1
 
 source ~/.vimrc-local
