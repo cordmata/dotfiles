@@ -1,8 +1,8 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle required!
 Bundle 'gmarik/vundle'
@@ -38,6 +38,8 @@ Bundle 'w0ng/vim-hybrid'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'zeis/vim-kolor'
 
+call vundle#end()
+
 filetype plugin indent on
 
 let mapleader = ","
@@ -47,9 +49,9 @@ set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 set background=dark
 set enc=utf-8
 " colorscheme kolor
-" colorscheme gruvbox
+ colorscheme gruvbox
 " colorscheme hybrid
-colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night
 " colorscheme Tomorrow-Night-Bright
 " colorscheme Tomorrow-Night-Eighties
 
@@ -95,8 +97,8 @@ set backspace=indent,eol,start
 set encoding=utf-8
 set showcmd         " display incomplete commands
 set laststatus=2    " Always show the statusline
-set colorcolumn=90  " Highlight characters extending past column 80 (Vim 7.3)
-" match ErrorMsg '\%>80v.\+'  " Highlight characters extending past column 80 (Vim < 7.3)
+set colorcolumn=90  " Highlight column 90 (Vim 7.3)
+" match ErrorMsg '\%>90v.\+'  " Highlight characters extending past column 90 (Vim < 7.3)
 
 set hlsearch
 set incsearch
@@ -186,6 +188,7 @@ nnoremap <Leader>g :YcmCompleter GoTo<Cr>
 let g:ycm_autoclose_preview_window_after_insertion=1
 
 let g:airline#extensions#branch#enabled=1
+" let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
 
 source ~/.vimrc-local
