@@ -25,8 +25,6 @@ function symlinkifne {
     echo "linked $1"
 }
 
-symlinkifne .dir_colors
-symlinkifne .fonts
 symlinkifne .gitconfig
 symlinkifne .tmux.conf
 symlinkifne .vim

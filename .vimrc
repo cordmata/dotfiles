@@ -8,9 +8,6 @@ call vundle#begin()
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
-Bundle 'bling/vim-airline'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-surround'
@@ -19,24 +16,14 @@ Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-dispatch'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'mtscout6/vim-cjsx'
 Bundle 'mxw/vim-jsx'
 Bundle 'groenewege/vim-less'
 Bundle 'kien/ctrlp.vim'
-Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'othree/html5.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'delimitMate.vim'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
 Bundle 'rking/ag.vim'
 
 " colorschemes
 Bundle 'morhetz/gruvbox'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'zeis/vim-kolor'
 
 call vundle#end()
 
@@ -48,12 +35,7 @@ syntax enable
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 set background=dark
 set enc=utf-8
-" colorscheme kolor
- colorscheme gruvbox
-" colorscheme hybrid
-" colorscheme Tomorrow-Night
-" colorscheme Tomorrow-Night-Bright
-" colorscheme Tomorrow-Night-Eighties
+colorscheme gruvbox
 
 highlight clear SignColumn
 highlight clear SpellBad
@@ -89,7 +71,6 @@ set wildmenu                        " Command line autocompletion
 set wildmode=list:longest,full      " Shows all the options
 set wildignore+=*.o,*.obj,.git,*.vim,/home/mcordial/repo/asurepo/static/**
 set wildignore+=*.pyc,*.egg-info/*,*.egg/**
-set wildignore+=/home/mcordial/repo/asurepo/static/**,.idea
 
 set backupdir=~/.vim/sessions//
 set directory=~/.vim/sessions//
@@ -139,8 +120,6 @@ augroup plugin_commentary
     au FileType puppet setlocal commentstring=#\ %s
 augroup END
 
-let delimitMate_expand_space = 1
-
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>go :Gread<CR>
@@ -156,23 +135,9 @@ nnoremap <leader>gi :Git!<Space>
 " for the diffmode
 noremap <leader>du :diffupdate<CR>
 
-let g:syntastic_quiet_messages = { "regex": '\m\[E501\]' }
-
-let g:ctrlp_extensions = ['tag', 'funky']
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
-
-let g:syntastic_python_pylint_exe = "pylint2"
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol  = '⚡'
-let g:syntastic_style_warning_symbol  = '⚡'
-
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 
 command! JSONFormat %!python -m json.tool
 
@@ -180,15 +145,3 @@ nnoremap <silent><Leader>n :set invnumber<CR>
 nnoremap <silent><Leader>r :set invrelativenumber<CR>
 nnoremap <Leader>cc :CtrlPClearAllCaches<CR>
 nnoremap <leader>f :Ag<Space>
-nnoremap <Leader>fu :CtrlPFunky<Cr>
-" narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-nnoremap <Leader>g :YcmCompleter GoTo<Cr>
-
-let g:ycm_autoclose_preview_window_after_insertion=1
-
-let g:airline#extensions#branch#enabled=1
-" let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts=1
-
-source ~/.vimrc-local
