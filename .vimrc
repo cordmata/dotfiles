@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle required!
-Bundle 'gmarik/vundle'
+Bundle 'VundleVim/Vundle.vim'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-commentary'
@@ -18,7 +18,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mxw/vim-jsx'
 Bundle 'groenewege/vim-less'
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'othree/html5.vim'
 Bundle 'rking/ag.vim'
 
