@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/Bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle required!
@@ -21,6 +21,10 @@ Bundle 'groenewege/vim-less'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'othree/html5.vim'
 Bundle 'rking/ag.vim'
+Bundle 'vim-syntastic/syntastic'
+Bundle 'easymotion/vim-easymotion'
+Bundle 'bling/vim-airline'
+Bundle 'mattn/emmet-vim'
 
 " colorschemes
 Bundle 'morhetz/gruvbox'
@@ -89,6 +93,17 @@ set ignorecase
 
 " Resize the divisions if the Vim window size changes
 au VimResized * exe "normal! \<c-w>="
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": ["ruby", "python"],
+    \ "passive_filetypes": ["html"]
+\}
 
 nnoremap <silent> <c-h> :noh<CR>
 nnoremap <silent> <c-j> :bn<CR>
