@@ -23,11 +23,12 @@ Bundle 'othree/html5.vim'
 Bundle 'rking/ag.vim'
 Bundle 'vim-syntastic/syntastic'
 Bundle 'easymotion/vim-easymotion'
-Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
 Bundle 'mattn/emmet-vim'
 
 " colorschemes
 Bundle 'morhetz/gruvbox'
+Bundle 'dracula/vim'
 
 call vundle#end()
 
@@ -40,7 +41,7 @@ set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 set background=dark
 set enc=utf-8
 set mouse=a
-colorscheme gruvbox
+colorscheme dracula
 
 highlight clear SignColumn
 highlight clear SpellBad
