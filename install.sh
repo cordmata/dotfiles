@@ -30,3 +30,4 @@ symlinkifne .tmux.conf
 symlinkifne .vim
 symlinkifne .vimrc
 symlinkifne .zshrc
+symlinkifne .editorconfig

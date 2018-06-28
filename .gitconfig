@@ -1,7 +1,9 @@
 [user]
 	name = Matt Cordial
-	email = matt.cordial@asu.edu
+	email = mcordial@kryteriononline.com
 [color]
 	ui = true
 [push]
 	default = simple
+[core]
+	excludesfile = /home/mcordial/.gitignore_global
