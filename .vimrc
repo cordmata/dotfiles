@@ -108,6 +108,8 @@ let g:syntastic_mode_map = {
     \ "passive_filetypes": ["html"]
 \}
 
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
 nnoremap <silent> <c-h> :noh<CR>
 nnoremap <silent> <c-j> :bn<CR>
 nnoremap <silent> <c-k> :bp<CR>
