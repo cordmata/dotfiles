@@ -25,6 +25,7 @@ Bundle 'vim-syntastic/syntastic'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'vim-airline/vim-airline'
 Bundle 'mattn/emmet-vim'
+Bundle 'editorconfig/editorconfig-vim'
 
 " colorschemes
 Bundle 'morhetz/gruvbox'
