@@ -14,14 +14,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-dispatch'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'mxw/vim-jsx'
-Bundle 'groenewege/vim-less'
 Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'othree/html5.vim'
 Bundle 'rking/ag.vim'
-Bundle 'vim-syntastic/syntastic'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'vim-airline/vim-airline'
 Bundle 'mattn/emmet-vim'
@@ -71,12 +65,12 @@ set textwidth=0
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set tags=tags,/home/mcordial/pyenvs/asurepo/lib/python2.7/site-packages/tags,/home/mcordial/pyenvs/src/tags
+set tags=tags
 set nofoldenable
 
 set wildmenu                        " Command line autocompletion
 set wildmode=list:longest,full      " Shows all the options
-set wildignore+=*.o,*.obj,.git,*.vim,/home/mcordial/repo/asurepo/static/**
+set wildignore+=*.o,*.obj,.git,*.vim
 set wildignore+=*.pyc,*.egg-info/*,*.egg/**
 
 set backupdir=~/.vim/sessions//
@@ -86,7 +80,6 @@ set encoding=utf-8
 set showcmd         " display incomplete commands
 set laststatus=2    " Always show the statusline
 set colorcolumn=90  " Highlight column 90 (Vim 7.3)
-" match ErrorMsg '\%>90v.\+'  " Highlight characters extending past column 90 (Vim < 7.3)
 
 set hlsearch
 set incsearch
@@ -96,17 +89,6 @@ set ignorecase
 
 " Resize the divisions if the Vim window size changes
 au VimResized * exe "normal! \<c-w>="
-
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": ["ruby", "python"],
-    \ "passive_filetypes": ["html"]
-\}
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
@@ -129,9 +111,6 @@ cnoremap <C-d>  <Delete>
 
 " Autoload configuration when this file changes ($MYVIMRC)
 autocmd! BufWritePost .vimrc source %
-au BufRead,BufNewFile */templates/*.html setlocal filetype=htmldjango.html
-autocmd BufWritePre * :%s/\s\+$//e " strip trailing whitespace
-au BufNewFile,BufReadPost *.coffee,Cakefile,*.eco setl shiftwidth=2 expandtab softtabstop=2
 
 augroup plugin_commentary
     au!
