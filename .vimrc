@@ -1,4 +1,5 @@
 set nocompatible
+
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -17,13 +18,14 @@ Bundle 'tpope/vim-dispatch'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'rking/ag.vim'
 Bundle 'easymotion/vim-easymotion'
-Bundle 'vim-airline/vim-airline'
 Bundle 'mattn/emmet-vim'
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'itchyny/lightline.vim'
 
 " colorschemes
 Bundle 'morhetz/gruvbox'
 Bundle 'dracula/vim'
+Bundle 'kaicataldo/material.vim'
 
 call vundle#end()
 
@@ -36,11 +38,13 @@ set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 set background=dark
 set enc=utf-8
 set mouse=a
-colorscheme dracula
+colorscheme material
+let g:lightline = { 'colorscheme': 'material_vim' }
 
 highlight clear SignColumn
 highlight clear SpellBad
 highlight SpellBad cterm=underline "ctermfg=green
+highlight ColorColumn ctermbg=7
 
 set autoindent
 set nowrap
@@ -78,7 +82,7 @@ set directory=~/.vim/sessions//
 set backspace=indent,eol,start
 set encoding=utf-8
 set showcmd         " display incomplete commands
-set laststatus=2    " Always show the statusline
+set laststatus=2    " always show statusline for lightline
 set colorcolumn=90  " Highlight column 90 (Vim 7.3)
 
 set hlsearch
