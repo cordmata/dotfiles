@@ -26,7 +26,9 @@ Bundle 'itchyny/lightline.vim'
 Bundle 'morhetz/gruvbox'
 Bundle 'dracula/vim'
 Bundle 'kaicataldo/material.vim'
-
+Bundle 'crusoexia/vim-monokai'
+Bundle 'lifepillar/vim-solarized8'
+Bundle 'altercation/vim-colors-solarized'
 call vundle#end()
 
 filetype plugin indent on
@@ -34,17 +36,18 @@ filetype plugin indent on
 let mapleader = ","
 
 syntax enable
-set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
-set background=dark
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
 set enc=utf-8
 set mouse=a
-colorscheme material
-let g:lightline = { 'colorscheme': 'material_vim' }
+set background=light
+colorscheme solarized8
+let g:lightline = { 'colorscheme': 'solarized' }
 
 highlight clear SignColumn
 highlight clear SpellBad
 highlight SpellBad cterm=underline "ctermfg=green
-highlight ColorColumn ctermbg=7
 
 set autoindent
 set nowrap
@@ -83,8 +86,6 @@ set backspace=indent,eol,start
 set encoding=utf-8
 set showcmd         " display incomplete commands
 set laststatus=2    " always show statusline for lightline
-set colorcolumn=90  " Highlight column 90 (Vim 7.3)
-
 set hlsearch
 set incsearch
 set showmatch
