@@ -29,6 +29,7 @@ Bundle 'kaicataldo/material.vim'
 Bundle 'crusoexia/vim-monokai'
 Bundle 'lifepillar/vim-solarized8'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'doums/darcula'
 call vundle#end()
 
 filetype plugin indent on
@@ -41,9 +42,11 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set enc=utf-8
 set mouse=a
-set background=light
-colorscheme solarized8
-let g:lightline = { 'colorscheme': 'solarized' }
+set background=dark
+colorscheme darcula
+
+let g:lightline = { 'colorscheme': 'darcula' }
+"let g:lightline = { 'colorscheme': 'darculaOriginal' }
 
 highlight clear SignColumn
 highlight clear SpellBad
