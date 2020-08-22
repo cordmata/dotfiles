@@ -1,9 +1,12 @@
 [user]
 	name = Matt Cordial
-	email = matt.cordial@gmail.com
+	email = Matt.Cordial@experian.com
 [color]
 	ui = true
 [push]
 	default = simple
 [core]
-	excludesfile = /Users/mcordial/.gitignore_global
+	excludesfile = /Users/c64332a/.gitignore_global
+	editor = nvim
+[pull]
+	rebase = false

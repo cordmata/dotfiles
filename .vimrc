@@ -1,35 +1,22 @@
 set nocompatible
-
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle required!
-Bundle 'VundleVim/Vundle.vim'
-
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-dispatch'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'rking/ag.vim'
-Bundle 'easymotion/vim-easymotion'
-Bundle 'mattn/emmet-vim'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'itchyny/lightline.vim'
-
-" colorschemes
-Bundle 'morhetz/gruvbox'
-Bundle 'dracula/vim'
-Bundle 'kaicataldo/material.vim'
-Bundle 'crusoexia/vim-monokai'
-Bundle 'lifepillar/vim-solarized8'
-Bundle 'altercation/vim-colors-solarized'
-call vundle#end()
+call plug#begin()
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-dispatch'
+Plug 'easymotion/vim-easymotion'
+Plug 'mattn/emmet-vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'doums/darcula'
+call plug#end()
 
 filetype plugin indent on
 
@@ -41,9 +28,10 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set enc=utf-8
 set mouse=a
-set background=light
-colorscheme solarized8
-let g:lightline = { 'colorscheme': 'solarized' }
+set clipboard=unnamed
+set background=dark
+colorscheme darcula
+let g:lightline = { 'colorscheme': 'darculaOriginal' }
 
 highlight clear SignColumn
 highlight clear SpellBad
@@ -101,9 +89,7 @@ nnoremap <silent> <c-h> :noh<CR>
 nnoremap <silent> <c-j> :bn<CR>
 nnoremap <silent> <c-k> :bp<CR>
 nnoremap <silent> <c-l> :b#<CR>
-
 nnoremap <silent> <leader>w :bp<CR>:bd #<CR>
-nnoremap <silent> <leader>ggt :GitGutterToggle<CR>
 nnoremap <silent> <leader>v :e $MYVIMRC<CR>
 nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
 nnoremap <leader>p :set invpaste<CR>
@@ -116,13 +102,7 @@ cnoremap <C-d>  <Delete>
 
 " Autoload configuration when this file changes ($MYVIMRC)
 autocmd! BufWritePost .vimrc source %
-
-augroup plugin_commentary
-    au!
-    au FileType python setlocal commentstring=#%s
-    au FileType htmldjango setlocal commentstring={#\ %s\ #}
-    au FileType puppet setlocal commentstring=#\ %s
-augroup END
+autocmd TermOpen * startinsert
 
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
@@ -138,14 +118,11 @@ nnoremap <leader>gi :Git!<Space>
 
 " for the diffmode
 noremap <leader>du :diffupdate<CR>
-
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
 command! JSONFormat %!python -m json.tool
 
 nnoremap <silent><Leader>n :set invnumber<CR>
 nnoremap <silent><Leader>r :set invrelativenumber<CR>
 nnoremap <Leader>cc :CtrlPClearAllCaches<CR>
-nnoremap <leader>f :Ag<Space>
+nnoremap <leader>f :Rg<Space>
+nnoremap <c-p> :Files<CR>
+
