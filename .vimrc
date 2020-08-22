@@ -31,7 +31,9 @@ set mouse=a
 set clipboard=unnamed
 set background=dark
 colorscheme darcula
-let g:lightline = { 'colorscheme': 'darculaOriginal' }
+
+let g:lightline = { 'colorscheme': 'darcula' }
+"let g:lightline = { 'colorscheme': 'darculaOriginal' }
 
 highlight clear SignColumn
 highlight clear SpellBad
