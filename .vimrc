@@ -37,7 +37,6 @@ set background=dark
 colorscheme dracula
 
 let g:lightline = { 'colorscheme': 'dracula' }
-"let g:lightline = { 'colorscheme': 'solarized' }
 
 highlight clear SignColumn
 highlight clear SpellBad

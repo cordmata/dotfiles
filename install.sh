@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-
 mkdir -p ~/.dotfiles_backup
 cd ~
 
-function symlinkifne {
+function link_if_needed {
 
   if [[ -e $1 ]]; then
     # file exists
@@ -13,7 +12,8 @@ function symlinkifne {
       echo "simlink $1 exists, skipped"
       return
     else
-      mv $1 ~/.dotfiles_backup/
+      mkdir -p "~/.dotfiles_backup/$(dirname $1)"
+      mv $1 "~/.dotfiles_backup/${1}"
       echo "backed up existing $1 ..."
     fi
   fi
@@ -22,14 +22,18 @@ function symlinkifne {
   echo "linked $1"
 }
 
-symlinkifne .gitconfig
-symlinkifne .tmux.conf
-symlinkifne .vim
-symlinkifne .vimrc
-symlinkifne .editorconfig
+link_if_needed .gitconfig
+link_if_needed .tmux.conf
+link_if_needed .vim
+link_if_needed .vimrc
+link_if_needed .editorconfig
 
 mkdir -p ~/.config/nvim
-symlinkifne .config/nvim/init.vim
+link_if_needed .config/nvim/init.vim
 
-mkdir -p ~/.config/fish
-symlinkifne .config/fish/config.fish
+mkdir -p ~/.config/fish/functions
+link_if_needed .config/fish/config.fish
+for f in ~/.dotfiles/.config/fish/functions/*.fish
+do
+  link_if_needed ".config/fish/functions/$(basename $f)"
+done

@@ -20,7 +20,7 @@ abbr -a tg terragrunt
 abbr -a dstop 'docker stop (docker ps -aq)'
 abbr -a kc kubectl
 
-abbr -a gfak git fetch --all --prune --jobs=10
+abbr -a gfa git fetch --all --prune --jobs=10
 abbr -a gc git checkout
 abbr -a gcd git checkout develop
 abbr -a gcm git checkout master
