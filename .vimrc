@@ -16,6 +16,9 @@ Plug 'mattn/emmet-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'doums/darcula'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'preservim/nerdtree'
+Plug 'lifepillar/vim-solarized8'
 call plug#end()
 
 filetype plugin indent on
@@ -25,15 +28,16 @@ let mapleader = ","
 syntax enable
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set viminfo='20,<1000,s1000
 set termguicolors
 set enc=utf-8
 set mouse=a
 set clipboard=unnamed
 set background=dark
-colorscheme darcula
+colorscheme dracula
 
-let g:lightline = { 'colorscheme': 'darcula' }
-"let g:lightline = { 'colorscheme': 'darculaOriginal' }
+let g:lightline = { 'colorscheme': 'dracula' }
+"let g:lightline = { 'colorscheme': 'solarized' }
 
 highlight clear SignColumn
 highlight clear SpellBad
@@ -87,6 +91,8 @@ au VimResized * exe "normal! \<c-w>="
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
+map <C-n> :NERDTreeToggle<CR>
+
 nnoremap <silent> <c-h> :noh<CR>
 nnoremap <silent> <c-j> :bn<CR>
 nnoremap <silent> <c-k> :bp<CR>
@@ -104,7 +110,6 @@ cnoremap <C-d>  <Delete>
 
 " Autoload configuration when this file changes ($MYVIMRC)
 autocmd! BufWritePost .vimrc source %
-autocmd TermOpen * startinsert
 
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>

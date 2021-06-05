@@ -26,8 +26,10 @@ symlinkifne .gitconfig
 symlinkifne .tmux.conf
 symlinkifne .vim
 symlinkifne .vimrc
-symlinkifne .zshrc
 symlinkifne .editorconfig
 
 mkdir -p ~/.config/nvim
 symlinkifne .config/nvim/init.vim
+
+mkdir -p ~/.config/fish
+symlinkifne .config/fish/config.fish
