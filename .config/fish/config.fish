@@ -19,9 +19,10 @@ abbr -a tf terraform
 abbr -a tg terragrunt
 abbr -a dstop 'docker stop (docker ps -aq)'
 abbr -a kc kubectl
+abbr -a chns kubectl config set-context --current=true --namespace=
 
 abbr -a gfa git fetch --all --prune --jobs=10
-abbr -a gc git checkout
+abbr -a gco git checkout
 abbr -a gcd git checkout develop
 abbr -a gcm git checkout master
 abbr -a gsw git switch

@@ -19,6 +19,7 @@ Plug 'doums/darcula'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'preservim/nerdtree'
 Plug 'lifepillar/vim-solarized8'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 filetype plugin indent on
@@ -34,9 +35,9 @@ set enc=utf-8
 set mouse=a
 set clipboard=unnamed
 set background=dark
-colorscheme dracula
+colorscheme nord
 
-let g:lightline = { 'colorscheme': 'dracula' }
+let g:lightline = { 'colorscheme': 'nord' }
 
 highlight clear SignColumn
 highlight clear SpellBad
