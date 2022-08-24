@@ -18,26 +18,32 @@ Plug 'itchyny/lightline.vim'
 Plug 'doums/darcula'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'preservim/nerdtree'
-Plug 'lifepillar/vim-solarized8'
+Plug 'altercation/vim-colors-solarized'
 Plug 'arcticicestudio/nord-vim'
+Plug 'haishanh/night-owl.vim'
 call plug#end()
 
 filetype plugin indent on
 
 let mapleader = ","
 
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 syntax enable
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set viminfo='20,<1000,s1000
-set termguicolors
 set enc=utf-8
 set mouse=a
 set clipboard=unnamed
 set background=dark
-colorscheme nord
-
-let g:lightline = { 'colorscheme': 'nord' }
+colorscheme night-owl
+let g:lightline = { 'colorscheme': 'nightowl' }
 
 highlight clear SignColumn
 highlight clear SpellBad
