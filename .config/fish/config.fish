@@ -1,8 +1,8 @@
 set -Ux EDITOR vim
 set -Ux FZF_DEFAULT_COMMAND 'rg --files'
-set -Ux GOPATH $HOME/go
 set -Ux PAGER less
 set -Ux VAULT_SKIP_VERIFY 1
+set -Ux LENS_DISABLE_GPU true
 
 fish_add_path $HOME/.cargo/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
 
@@ -25,12 +25,14 @@ abbr -a tg terragrunt
 abbr -a dstop 'docker stop (docker ps -aq)'
 abbr -a kc kubectl
 abbr -a chns kubectl config set-context --current=true --namespace=
+abbr -a tunnel ssh -nNT -L 5432:[RDS endpoint]:5432 jumphost
 
 abbr -a gfa git fetch --all --prune --jobs=10
 abbr -a gb git branch
 abbr -a gco git checkout
 abbr -a gcd git checkout develop
 abbr -a gcm git checkout master
+abbr -a gcma git checkout main
 abbr -a glg git log --oneline --all --graph
 abbr -a gst git status
 abbr -a gsw git switch
