@@ -15,12 +15,10 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mattn/emmet-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'doums/darcula'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'preservim/nerdtree'
-Plug 'altercation/vim-colors-solarized'
-Plug 'arcticicestudio/nord-vim'
 Plug 'haishanh/night-owl.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 filetype plugin indent on
@@ -41,9 +39,14 @@ set viminfo='20,<1000,s1000
 set enc=utf-8
 set mouse=a
 set clipboard=unnamed
-set background=dark
-colorscheme night-owl
-let g:lightline = { 'colorscheme': 'nightowl' }
+
+" set background=dark
+" colorscheme night-owl
+" let g:lightline = { 'colorscheme': 'nightowl' }
+
+set background=light
+colorscheme solarized
+let g:lightline = { 'colorscheme': 'solarized' }
 
 highlight clear SignColumn
 highlight clear SpellBad
