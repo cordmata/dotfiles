@@ -1,39 +1,31 @@
 #!/usr/bin/env bash
-mkdir -p ~/.dotfiles_backup
-cd ~
+set -euo pipefail
 
-function link_if_needed {
+DOTFILES="$HOME/.dotfiles"
+[[ ! -d "$DOTFILES" ]] && echo "$DOTFILES not in expected location" && exit 1
 
-  if [[ -e $1 ]]; then
-    # file exists
+BACKUP="$HOME/._dotfiles_backup"
+rm -rf "$BACKUP"
+mkdir -p "$BACKUP"
 
-    if [[ -L $1 ]]; then
-      # it's already a simlink, assume from this proj
-      echo "simlink $1 exists, skipped"
-      return
-    else
-      mkdir -p "~/.dotfiles_backup/$(dirname $1)"
-      mv $1 "~/.dotfiles_backup/${1}"
-      echo "backed up existing $1 ..."
-    fi
-  fi
-  # create the link
-  ln -s ~/.dotfiles/$1 $1
-  echo "linked $1"
+function backup() {
+    cp -R "$1" "$BACKUP/" || echo "No existing $1"
 }
 
-link_if_needed .gitconfig
-link_if_needed .tmux.conf
-link_if_needed .vim
-link_if_needed .vimrc
-link_if_needed .editorconfig
+EDITORCONFIG="$HOME/.editorconfig"
+backup "$EDITORCONFIG"
+ln -sf "$DOTFILES/editorconfig" "$EDITORCONFIG"
 
-mkdir -p ~/.config/nvim
-link_if_needed .config/nvim/init.vim
+NVIM_DIR="$HOME/.config/nvim"
+NVIM_INIT="$NVIM_DIR/init.lua"
+NVIM_LUA="$NVIM_DIR/lua"
+mkdir -p "$NVIM_LUA"
+backup "$NVIM_INIT"
+backup "$NVIM_LUA/mac"
+ln -sf "$DOTFILES/config/nvim/init.lua" "$NVIM_INIT"
+ln -sf "$DOTFILES/config/nvim/lua/mac" "$NVIM_LUA"
 
-mkdir -p ~/.config/fish/functions
-link_if_needed .config/fish/config.fish
-for f in ~/.dotfiles/.config/fish/functions/*.fish
-do
-  link_if_needed ".config/fish/functions/$(basename $f)"
-done
+FISH_DIR="$HOME/.config/fish"
+mkdir -p "$FISH_DIR/functions"
+ln -sf "$DOTFILES/config/fish/config.fish" "$FISH_DIR/config.fish"
+
