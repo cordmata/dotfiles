@@ -1,4 +1,2 @@
-.vim/bundle/*
-.vim/plugged/*
 .DS_Store
-.vim/.netrwhist
+config/nvim/lua/mac/local.lua

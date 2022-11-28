@@ -7,3 +7,7 @@ require("mac.lsp")
 
 require("mac.plugins.lualine")
 require("mac.plugins.gitsigns")
+
+
+require("mac.local")
+

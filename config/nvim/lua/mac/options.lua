@@ -6,7 +6,6 @@ g.t_co = 256
 g.background = "dark"
 opt.syntax = "ON"                -- str:  Allow syntax highlighting
 opt.termguicolors = true         -- bool: If term supports ui color then enable
-vim.cmd[[colorscheme dracula]]
 
 -- Context
 opt.colorcolumn = '80'           -- str:  Show col for max line length
