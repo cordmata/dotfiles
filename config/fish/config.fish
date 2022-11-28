@@ -39,4 +39,22 @@ abbr -a gsw git switch
 abbr -a gswc git switch -c
 
 source /usr/local/opt/fzf/shell/key-bindings.fish && fzf_key_bindings
+
+
+function code --argument opendir
+    if test -z $opendir
+        set opendir (ls -d $HOME/code/* | fzf)
+    end
+    command code $opendir
+end
+
+function vim --argument opendir
+    if test -z $opendir
+        set opendir (ls -d $HOME/code/* | fzf)
+    end
+    cd $opendir
+    command nvim $opendir
+end
+
+
 starship init fish | source

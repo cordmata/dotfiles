@@ -3,7 +3,7 @@ map('n', '<c-j>', ':bn <cr>')
 map('n', '<c-k>', ':bp <cr>')
 
 map('n', '<leader>w', ':bp<cr>:bd #<cr>')
-map('n', '<leader>e', ':Explore<cr>')
+map('n', '<leader>ee', ':Explore<cr>')
 map('n', '<leader>ec', ':Explore $HOME/code<cr>')
 map('n', '<leader>1', ':only<cr>')
 map('n', '<leader>cv', ':Telescope find_files cwd=$HOME/.dotfiles/config/nvim<cr>')
