@@ -39,5 +39,4 @@ abbr -a gsw git switch
 abbr -a gswc git switch -c
 
 source /usr/local/opt/fzf/shell/key-bindings.fish && fzf_key_bindings
-fish_ssh_agent
 starship init fish | source

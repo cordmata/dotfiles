@@ -4,6 +4,7 @@ map('n', '<c-k>', ':bp <cr>')
 
 map('n', '<leader>w', ':bp<cr>:bd #<cr>')
 map('n', '<leader>e', ':Explore<cr>')
+map('n', '<leader>ec', ':Explore $HOME/code<cr>')
 map('n', '<leader>1', ':only<cr>')
 map('n', '<leader>cv', ':Telescope find_files cwd=$HOME/.dotfiles/config/nvim<cr>')
 map('n', '<leader>cf', ':Telescope find_files cwd=$HOME/.dotfiles/config/fish<cr>')
