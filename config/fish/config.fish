@@ -48,13 +48,4 @@ function code --argument opendir
     command code $opendir
 end
 
-function vim --argument opendir
-    if test -z $opendir
-        set opendir (ls -d $HOME/code/* | fzf)
-    end
-    cd $opendir
-    command nvim $opendir
-end
-
-
 starship init fish | source
