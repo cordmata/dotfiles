@@ -26,6 +26,9 @@ return require('packer').startup(function(use)
   use 'nvim-lua/popup.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'mfussenegger/nvim-dap'
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+      require("toggleterm").setup()
+  end}
 
   -- Git
   use 'tpope/vim-fugitive'
