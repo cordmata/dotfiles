@@ -41,5 +41,6 @@ return require('packer').startup(function(use)
   use 'Mofiqul/dracula.nvim'
   use 'haishanh/night-owl.vim'
   use 'shaunsingh/solarized.nvim'
+  use 'shaunsingh/nord.nvim'
 
 end)
