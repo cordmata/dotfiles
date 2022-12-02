@@ -13,7 +13,10 @@ map('n', '<leader>1', ':only<cr>')
 map('n', '<leader>cv', ':Telescope find_files follow=true cwd=$HOME/.dotfiles/config/nvim<cr>')
 map('n', '<leader>cf', ':Telescope find_files follow=true cwd=$HOME/.dotfiles/config/fish<cr>')
 
-map('n', '<leader>rt', ':split term://lua missions.lua<cr>i')
+map('n', '<leader>gg', ':Git')
+map('n', '<leader>gs', ':Git<cr>')
+map('n', '<leader>gp', ':Git push<cr>')
+map('n', '<leader>gf', ':Git fetch --all --prune --jobs=10<cr>')
 
 -- Telescope
 local tele = require('telescope.builtin')
