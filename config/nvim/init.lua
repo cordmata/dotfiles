@@ -10,5 +10,5 @@ require("mac.plugins.lualine")
 require("mac.plugins.gitsigns")
 require("mac.plugins.telescope")
 
-require("mac.local")
+pcall(require, "local")
 
