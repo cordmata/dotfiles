@@ -7,6 +7,7 @@ map('n', '<C-j>', [[<Cmd>wincmd w<CR>]], opts)
 map('n', '<C-k>', [[<Cmd>wincmd W<CR>]], opts)
 
 map('n', '<leader>w', ':bp<cr>:bd #<cr>')
+map('n', '<leader>q', ':q<cr>')
 map('n', '<leader>ee', ':Explore<cr>')
 map('n', '<leader>ec', ':Explore $HOME/code<cr>')
 map('n', '<leader>1', ':only<cr>')
