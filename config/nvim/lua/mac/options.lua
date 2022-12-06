@@ -16,6 +16,7 @@ opt.backup = false               -- bool: More trouble than it's worth
 opt.clipboard = 'unnamedplus'    -- str:  System clipboard
 opt.scrolloff = 8                -- num:  Chars before moving the page window down
 opt.sidescrolloff = 8
+opt.wrap = false
 
 -- Filetypes
 opt.encoding = 'utf8'            -- str:  String encoding to use
