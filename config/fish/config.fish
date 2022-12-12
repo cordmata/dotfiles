@@ -38,6 +38,8 @@ abbr -a gst git status
 abbr -a gsw git switch
 abbr -a gswc git switch -c
 
+abbr -a pyactivate source $HOME/python/devenv/bin/activate.fish
+
 source /usr/local/opt/fzf/shell/key-bindings.fish && fzf_key_bindings
 
 function code --argument opendir
@@ -51,3 +53,5 @@ function fish_greeting
 end
 
 starship init fish | source
+
+source /Users/c64332a/.docker/init-fish.sh || true # Added by Docker Desktop
