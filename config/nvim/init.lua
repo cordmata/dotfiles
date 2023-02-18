@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.cmd('colorscheme tokyonight')
+vim.cmd('colorscheme tokyonight-storm')
 
 require("mac.options")
 require("mac.plugins")
