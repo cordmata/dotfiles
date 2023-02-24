@@ -4,7 +4,7 @@ set -Ux PAGER less
 set -Ux VAULT_SKIP_VERIFY 1
 set -Ux LENS_DISABLE_GPU true
 
-fish_add_path $HOME/.sdkman/candidates/gradle/current/bin/ $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
+fish_add_path $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
 
 if type -q nvim
   alias vim='nvim'
