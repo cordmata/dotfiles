@@ -24,6 +24,7 @@ abbr -a tfsh terraform show
 abbr -a tg terragrunt
 abbr -a dstop 'docker stop (docker ps -aq)'
 abbr -a kc kubectl
+abbr -a kcc kubectl config unset current-context
 abbr -a chns kubectl config set-context --current=true --namespace=
 abbr -a tunnel ssh -nNT -L 5432:[RDS endpoint]:5432 jumphost
 
@@ -37,8 +38,6 @@ abbr -a glg git log --oneline --all --graph
 abbr -a gst git status
 abbr -a gsw git switch
 abbr -a gswc git switch -c
-
-abbr -a pyactivate source $HOME/python/devenv/bin/activate.fish
 
 source /usr/local/opt/fzf/shell/key-bindings.fish && fzf_key_bindings
 
