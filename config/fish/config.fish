@@ -3,6 +3,7 @@ set -Ux FZF_DEFAULT_COMMAND 'rg --files'
 set -Ux PAGER less
 set -Ux VAULT_SKIP_VERIFY 1
 set -Ux LENS_DISABLE_GPU true
+set -Ux XDG_CONFIG_HOME "$HOME"/.config
 
 fish_add_path $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
 
