@@ -37,11 +37,6 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   -- Colors & Themes
-  use 'folke/tokyonight.nvim'
-  use 'Mofiqul/dracula.nvim'
-  use 'haishanh/night-owl.vim'
-  use 'shaunsingh/solarized.nvim'
-  use 'shaunsingh/nord.nvim'
   use 'RRethy/nvim-base16'
 
 end)
