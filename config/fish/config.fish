@@ -40,6 +40,13 @@ abbr -a gst git status
 abbr -a gsw git switch
 abbr -a gswc git switch -c
 
+abbr -a da direnv allow
+
+function theme
+    set _theme (functions | grep base16- | fzf)
+    $_theme
+end
+
 source /usr/local/opt/fzf/shell/key-bindings.fish && fzf_key_bindings
 
 function code --argument opendir
