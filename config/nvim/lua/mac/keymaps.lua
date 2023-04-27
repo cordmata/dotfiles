@@ -19,6 +19,17 @@ map('n', '<leader>gs', ':Git<cr>')
 map('n', '<leader>gp', ':Git push<cr>')
 map('n', '<leader>gf', ':Git fetch --all --prune --jobs=10<cr>')
 
+map("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+
+map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+  {silent = true, noremap = true}
+)
+
+map("n", "<leader><leader>", function()
+    vim.cmd("so")
+end)
+
 -- Telescope
 local tele = require('telescope.builtin')
 map('n', '<leader>ff', ':Telescope find_files follow=true <cr>')
