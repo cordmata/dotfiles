@@ -22,6 +22,12 @@ local plugins = {
     'tpope/vim-fugitive',
     'tpope/vim-rhubarb',     -- git browse for Github
     'tommcdo/vim-fubitive',  -- git browse for Bitbucket
+    {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require("gitsigns").setup {}
+        end
+    },
 
     {
         'nvim-lualine/lualine.nvim',
