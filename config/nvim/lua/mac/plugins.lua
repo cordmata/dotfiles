@@ -1,78 +1,85 @@
--- ensure the packer plugin manager is installed
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-    vim.cmd([[packadd packer.nvim]])
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
+local plugins = {
+    'wbthomason/packer.nvim',
+    'mattn/emmet-vim',
+    'editorconfig/editorconfig-vim',
+    'nvim-lualine/lualine.nvim',
+    'mbbill/undotree',
+    'nvim-lua/popup.nvim',
+    'mfussenegger/nvim-dap',
+    'RRethy/nvim-base16',
 
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    'tpope/vim-fugitive',
+    'tpope/vim-rhubarb',     -- git browse for Github
+    'tommcdo/vim-fubitive',  -- git browse for Bitbucket
 
-  use 'mattn/emmet-vim'
-  use 'editorconfig/editorconfig-vim'
-  use 'nvim-lualine/lualine.nvim'
-  use 'mbbill/undotree'
-  use 'nvim-lua/popup.nvim'
-  use {
-	  'nvim-telescope/telescope.nvim',
-	  requires = 'nvim-lua/plenary.nvim'
-  }
-  use 'mfussenegger/nvim-dap'
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-      require("toggleterm").setup()
-  end}
-
-  use 'tpope/vim-fugitive'
-
-  use {
-      "folke/trouble.nvim",
-      requires = "nvim-tree/nvim-web-devicons",
-      config = function()
-        require("trouble").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
+    {
+        'nvim-treesitter/nvim-treesitter',
+        cmd = 'TSUpdate'
+    },
+    {
+        'nvim-telescope/telescope.nvim',
+        dependencies = 'nvim-lua/plenary.nvim'
+    },
+    {
+        "akinsho/toggleterm.nvim",
+        config = function()
+            require("toggleterm").setup()
         end
-  }
+    },
 
-  use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  requires = {
-		  -- LSP Support
-		  'neovim/nvim-lspconfig',
-		  'williamboman/mason.nvim',
-		  'williamboman/mason-lspconfig.nvim',
 
-		  -- Autocompletion
-		  'hrsh7th/nvim-cmp',
-		  'hrsh7th/cmp-buffer',
-		  'hrsh7th/cmp-path',
-		  'saadparwaiz1/cmp_luasnip',
-		  'hrsh7th/cmp-nvim-lsp',
-		  'hrsh7th/cmp-nvim-lua',
+    {
+        "folke/trouble.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons"
+        },
+        config = function()
+            require("trouble").setup {
+                -- your configuration comes here
+                -- or leave it empty to  the default settings
+                -- refer to the configuration section below
+            }
+        end
+    },
 
-		  -- Snippets
-		  'L3MON4D3/LuaSnip',
-		  'rafamadriz/friendly-snippets',
-	  }
-  }
+    {
+        'VonHeikemen/lsp-zero.nvim',
+        dependencies = {
+            -- LSP Support
+            'neovim/nvim-lspconfig',
+            'williamboman/mason.nvim',
+            'williamboman/mason-lspconfig.nvim',
 
-  use 'tpope/vim-rhubarb'     -- git browse for Github
-  use 'tommcdo/vim-fubitive'  -- git browse for Bitbucket
-  use 'lewis6991/gitsigns.nvim'
+            -- Autocompletion
+            'hrsh7th/nvim-cmp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'saadparwaiz1/cmp_luasnip',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-nvim-lua',
 
-  -- Colors & Themes
-  use 'RRethy/nvim-base16'
+            -- Snippets
+            'L3MON4D3/LuaSnip',
+            'rafamadriz/friendly-snippets',
+        }
+    },
 
-end)
+}
+
+require("lazy").setup(plugins, opts)
+
 

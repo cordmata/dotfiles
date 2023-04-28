@@ -18,6 +18,25 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 end)
 
+
+lsp.extend_lspconfig()
+
+require('mason').setup()
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    -- Replace these with the servers you want to install
+    'rust_analyzer',
+    'tsserver',
+    'eslint',
+  }
+})
+
+require('mason-lspconfig').setup_handlers({
+  function(server_name)
+    require('lspconfig')[server_name].setup({})
+  end
+})
+
 lsp.setup()
 
 local cmp = require('cmp')
