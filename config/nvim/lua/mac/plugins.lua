@@ -59,6 +59,9 @@ local plugins = {
                     "rust",
                     "python",
                     "go",
+                    "java",
+                    "kotlin",
+                    "groovy",
                 },
                 highlight = {
                     enable = true,
