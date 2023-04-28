@@ -16,7 +16,6 @@ local plugins = {
     'mattn/emmet-vim',
     'editorconfig/editorconfig-vim',
     'mbbill/undotree',
-    'nvim-lua/popup.nvim',
     'mfussenegger/nvim-dap',
     'RRethy/nvim-base16',
 
@@ -105,6 +104,6 @@ local plugins = {
 
 }
 
-require("lazy").setup(plugins, opts)
+require("lazy").setup(plugins, {})
 
 

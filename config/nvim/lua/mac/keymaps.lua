@@ -21,7 +21,6 @@ map('n', '<leader>gf', ':Git fetch --all --prune --jobs=10<cr>')
 
 map("n", "<leader>u", vim.cmd.UndotreeToggle)
 
-
 map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
   {silent = true, noremap = true}
 )
