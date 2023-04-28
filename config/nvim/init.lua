@@ -1,4 +1,3 @@
-
 local g = vim.g         -- globals
 local opt = vim.opt     -- options
 
