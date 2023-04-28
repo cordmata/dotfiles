@@ -13,10 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 
 local plugins = {
-    'wbthomason/packer.nvim',
     'mattn/emmet-vim',
     'editorconfig/editorconfig-vim',
-    'nvim-lualine/lualine.nvim',
     'mbbill/undotree',
     'nvim-lua/popup.nvim',
     'mfussenegger/nvim-dap',
@@ -27,20 +25,47 @@ local plugins = {
     'tommcdo/vim-fubitive',  -- git browse for Bitbucket
 
     {
+        'nvim-lualine/lualine.nvim',
+        config = function()
+            require('lualine').setup()
+        end
+    },
+
+    {
         'nvim-treesitter/nvim-treesitter',
         cmd = 'TSUpdate'
     },
+
     {
         'nvim-telescope/telescope.nvim',
-        dependencies = 'nvim-lua/plenary.nvim'
+        dependencies = {
+            'nvim-lua/plenary.nvim'
+        },
+        config = function()
+            require("telescope").setup {
+              defaults = {
+                vimgrep_arguments = {
+                  "rg",
+                  "--color=never",
+                  "--no-heading",
+                  "--with-filename",
+                  "--follow", -- symlinks
+                  "--line-number",
+                  "--column",
+                  "--smart-case",
+                  "--trim"
+                }
+              }
+            }
+        end
     },
+
     {
         "akinsho/toggleterm.nvim",
         config = function()
             require("toggleterm").setup()
         end
     },
-
 
     {
         "folke/trouble.nvim",
