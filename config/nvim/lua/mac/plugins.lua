@@ -38,7 +38,33 @@ local plugins = {
 
     {
         'nvim-treesitter/nvim-treesitter',
-        cmd = 'TSUpdate'
+        cmd = 'TSUpdate',
+        config = function()
+            require("nvim-treesitter.configs").setup({
+                ensured_installed = {
+                    "bash",
+                    "comment",
+                    "css",
+                    "html",
+                    "javascript",
+                    "jsdoc",
+                    "jsonc",
+                    "lua",
+                    "markdown",
+                    "regex",
+                    "scss",
+                    "toml",
+                    "typescript",
+                    "yaml",
+                    "rust",
+                    "python",
+                    "go",
+                },
+                highlight = {
+                    enable = true,
+                },
+            })
+        end
     },
 
     {
