@@ -41,6 +41,7 @@ abbr -a gsw git switch
 abbr -a gswc git switch -c
 
 abbr -a da direnv allow
+abbr -a dot cd $HOME/.dotfiles
 
 function theme
     set _theme (functions | grep base16- | fzf)

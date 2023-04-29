@@ -26,6 +26,11 @@ ln -sf "$DOTFILES/config/nvim/init.lua" "$NVIM_INIT"
 ln -sf "$DOTFILES/config/nvim/lua/mac" "$NVIM_LUA"
 
 FISH_DIR="$HOME/.config/fish"
-mkdir -p "$FISH_DIR/functions"
 ln -sf "$DOTFILES/config/fish/config.fish" "$FISH_DIR/config.fish"
+
+mkdir -p "$FISH_DIR/functions"
+for fun in "$DOTFILES/config/fish/functions/"*
+do
+    ln -sf "$fun" "$FISH_DIR/functions/"
+done
 

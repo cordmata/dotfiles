@@ -18,6 +18,7 @@ local plugins = {
     'mbbill/undotree',
     'mfussenegger/nvim-dap',
     'RRethy/nvim-base16',
+    'direnv/direnv.vim',
 
     'tpope/vim-fugitive',
     'tpope/vim-rhubarb',     -- git browse for Github
