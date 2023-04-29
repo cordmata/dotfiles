@@ -62,6 +62,7 @@ local plugins = {
                     "java",
                     "kotlin",
                     "groovy",
+                    "fish",
                 },
                 highlight = {
                     enable = true,
