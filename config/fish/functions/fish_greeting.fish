@@ -73,5 +73,5 @@ function fish_greeting
     and lolcat
     or tee
   end
-  #echo "$__mac_blocky" | rainbow
+  echo "$__die_human" | rainbow
 end

@@ -56,7 +56,4 @@ function code --argument opendir
     command code $opendir
 end
 
-function fish_greeting
-end
-
 starship init fish | source
