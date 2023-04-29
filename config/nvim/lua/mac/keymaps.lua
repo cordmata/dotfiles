@@ -1,5 +1,7 @@
 local map = vim.keymap.set
 
+local opts = { silent = true, noremap = true }
+
 map('n', '<c-n>', ':bn <cr>')
 map('n', '<c-p>', ':bp <cr>')
 
@@ -21,19 +23,15 @@ map('n', '<leader>gf', ':Git fetch --all --prune --jobs=10<cr>')
 
 map("n", "<leader>u", vim.cmd.UndotreeToggle)
 
-map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
-  {silent = true, noremap = true}
-)
+map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
 
-map("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
+map("n", "<leader><leader>", "<cmd>so<cr>")
 
 -- Telescope
 local tele = require('telescope.builtin')
-map('n', '<leader>ff', ':Telescope find_files follow=true <cr>')
-map('n', '<leader>fF', ':Telescope find_files follow=true hidden=true <cr>')
-map('n', '<leader>fr', ':Telescope lsp_references <cr>')
+map('n', '<leader>tt', '<cmd>Telescope<cr>')
+map('n', '<leader>ff', '<cmd>Telescope find_files follow=true <cr>')
+map('n', '<leader>fF', '<cmd>Telescope find_files follow=true hidden=true <cr>')
 map('n', '<leader>fg', tele.live_grep)
 map('n', '<leader>fb', tele.buffers)
 map('n', '<leader>fo', tele.lsp_document_symbols)
@@ -43,6 +41,9 @@ map('n', '<leader>gc', tele.git_commits)
 map('n', '<leader>gb', tele.git_branches)
 map('n', '<leader>ts', tele.treesitter)
 
+map('n', '<leader>rr', tele.command_history)
+map('n', '<leader>cc', tele.commands)
+
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
   map('t', '<esc>', [[<C-\><C-n>]], opts)
@@ -51,8 +52,5 @@ function _G.set_terminal_keymaps()
   map('t', '<C-h>', [[<Cmd>wincmd W<CR>]], opts)
 end
 
--- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-
-map('n', '<leader>tt', ':ToggleTerm<cr>')
+map('n', '<leader>fr', ':term ./%')
 
