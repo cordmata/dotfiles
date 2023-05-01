@@ -29,9 +29,9 @@ map("n", "<leader><leader>", "<cmd>so<cr>")
 
 -- Telescope
 local tele = require('telescope.builtin')
-map('n', '<leader>tt', '<cmd>Telescope<cr>')
-map('n', '<leader>ff', '<cmd>Telescope find_files follow=true <cr>')
-map('n', '<leader>fF', '<cmd>Telescope find_files follow=true hidden=true <cr>')
+map('n', '<leader>tt', '<cmd>Telescope <cr>')
+map('n', '<leader>ff', '<cmd>Telescope find_files follow=true theme=dropdown<cr>')
+map('n', '<leader>fF', '<cmd>Telescope find_files follow=true hidden=true theme=dropdown<cr>')
 map('n', '<leader>fg', tele.live_grep)
 map('n', '<leader>fb', tele.buffers)
 map('n', '<leader>fo', tele.lsp_document_symbols)
