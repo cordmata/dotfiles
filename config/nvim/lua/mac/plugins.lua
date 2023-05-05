@@ -68,6 +68,15 @@ local plugins = {
                 highlight = {
                     enable = true,
                 },
+                incremental_selection = {
+                    enable = true,
+                    keymaps = {
+                        init_selection = "<leader>vv",
+                        node_incremental = "vj",
+                        scope_incremental = "VV",
+                        node_decremental = "vk",
+                    },
+                },
             })
         end
     },
