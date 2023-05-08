@@ -10,11 +10,11 @@ end
 nmap('<c-n>', ':bn <cr>')
 nmap('<c-p>', ':bp <cr>')
 
-nmap('<C-j>', [[<Cmd>wincmd w<CR>]])
-nmap('<C-k>', [[<Cmd>wincmd W<CR>]])
+nmap('<C-j>', '<Cmd>wincmd w<CR>')
+nmap('<C-k>', '<Cmd>wincmd W<CR>')
 
 nmap('<leader>w', ':bp<cr>:bd #<cr>')
-nmap('<leader>q', ':q<cr>')
+nmap('<leader>q', ':bunload<cr>')
 nmap('<leader>ee', ':Lexplore<cr>')
 nmap('<leader>1', ':only<cr>')
 nmap('<leader>cv', ':Telescope find_files follow=true cwd=$HOME/.config/nvim<cr>')

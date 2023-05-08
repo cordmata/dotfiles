@@ -7,11 +7,12 @@ set -Ux XDG_CONFIG_HOME "$HOME/.config"
 
 fish_add_path $HOME/.maven/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
 
-if type -q nvim
-  alias vim='nvim'
+if type -q hx
+  abbr -a vim hx
 end
 
-alias vi=vim
+abbr -a ef exec fish
+
 alias ls="ls -G"
 
 abbr -a f open -a Finder ./
