@@ -1,0 +1,16 @@
+theme = "base16_transparent"
+
+[editor]
+line-number = "relative"
+color-modes = true
+bufferline = "always"
+scrolloff = 8
+rulers = [80, 120]
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
