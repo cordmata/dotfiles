@@ -73,5 +73,6 @@ function fish_greeting
     and lolcat
     or tee
   end
-  echo "$__die_human" | rainbow
+  printf '=%.0s' (seq 1 $(tput cols)) | rainbow
+  echo
 end
