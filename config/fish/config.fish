@@ -1,4 +1,4 @@
-set -Ux EDITOR vim
+set -Ux EDITOR nvim
 set -Ux FZF_DEFAULT_COMMAND 'rg --files'
 set -Ux PAGER less
 set -Ux VAULT_SKIP_VERIFY 1
@@ -7,8 +7,8 @@ set -Ux XDG_CONFIG_HOME "$HOME/.config"
 
 fish_add_path $HOME/.maven/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
 
-if type -q hx
-  abbr -a vim hx
+if type -q nvim
+  abbr -a vim nvim
 end
 
 abbr -a ef exec fish

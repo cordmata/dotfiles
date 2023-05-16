@@ -25,12 +25,10 @@ nmap('<leader>gs', ':Git<cr>')
 nmap('<leader>gp', ':Git push<cr>')
 nmap('<leader>gf', ':Git fetch --all --prune --jobs=10<cr>')
 
-map("n", "<leader>u", vim.cmd.UndotreeToggle)
-map("n", "<leader>//", ':%s/')
-
-map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
-
-map("n", "<leader><leader>", "<cmd>so<cr>")
+nmap("<leader>u", vim.cmd.UndotreeToggle)
+nmap("<leader>//", ':%s/')
+nmap("<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
+nmap("<leader><leader>", "<cmd>so<cr>")
 
 -- Telescope
 local tele = require('telescope.builtin')
@@ -49,13 +47,11 @@ nmap('<leader>ts', tele.treesitter)
 nmap('<leader>rr', tele.command_history)
 nmap("<leader><leader>c", tele.commands)
 
-function _G.set_terminal_keymaps()
-  local opts = {buffer = 0}
-  map('t', '<esc>', [[<C-\><C-n>]])
-  map('t', 'jk', [[<C-\><C-n>]])
-  map('t', '<C-j>', [[<Cmd>wincmd w<CR>]])
-  map('t', '<C-h>', [[<Cmd>wincmd W<CR>]])
-end
+local t_opts = {buffer = 0, silent = true}
+map('t', '<esc>', [[<C-\><C-n>]], t_opts)
+map('t', 'jk', [[<C-\><C-n>]], t_opts)
+map('t', '<C-j>', [[<Cmd>wincmd w<CR>]], t_opts)
+map('t', '<C-h>', [[<Cmd>wincmd W<CR>]], t_opts)
 
 nmap('<leader>fr', ':term ./%')
 

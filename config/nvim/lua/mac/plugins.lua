@@ -21,6 +21,7 @@ local plugins = {
     'direnv/direnv.vim',
 
     'tpope/vim-fugitive',
+    'tpope/vim-commentary',
     'tpope/vim-rhubarb',     -- git browse for Github
     'tommcdo/vim-fubitive',  -- git browse for Bitbucket
     {
@@ -80,6 +81,8 @@ local plugins = {
             })
         end
     },
+
+    'nvim-treesitter/nvim-treesitter-context',
 
     {
         'nvim-telescope/telescope.nvim',
