@@ -15,7 +15,7 @@ nmap('<C-k>', '<Cmd>wincmd W<CR>')
 
 nmap('<leader>w', ':bp<cr>:bd #<cr>')
 nmap('<leader>q', ':bunload<cr>')
-nmap('<leader>ee', ':Lexplore<cr>')
+nmap('<leader>ee', ':Explore<cr>')
 nmap('<leader>1', ':only<cr>')
 nmap('<leader>cv', ':Telescope find_files follow=true cwd=$HOME/.config/nvim<cr>')
 nmap('<leader>cf', ':Telescope find_files follow=true cwd=$HOME/.config/fish<cr>')
