@@ -49,8 +49,4 @@ function theme
     $_theme
 end
 
-source /usr/local/opt/fzf/shell/key-bindings.fish && fzf_key_bindings
-
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix -d 2 $dir'
-
 starship init fish | source

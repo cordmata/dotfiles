@@ -33,6 +33,7 @@ nmap("<leader><leader>", "<cmd>so<cr>")
 -- Telescope
 local tele = require('telescope.builtin')
 nmap('<leader>tt', '<cmd>Telescope<cr>')
+nmap('<leader>fr', '<cmd>Telescope resume<cr>')
 nmap('<leader>ff', '<cmd>Telescope find_files follow=true <cr>')
 nmap('<leader>fF', '<cmd>Telescope find_files follow=true hidden=true <cr>')
 nmap('<leader>fg', tele.live_grep)
@@ -52,6 +53,3 @@ map('t', '<esc>', [[<C-\><C-n>]], t_opts)
 map('t', 'jk', [[<C-\><C-n>]], t_opts)
 map('t', '<C-j>', [[<Cmd>wincmd w<CR>]], t_opts)
 map('t', '<C-h>', [[<Cmd>wincmd W<CR>]], t_opts)
-
-nmap('<leader>fr', ':term ./%')
-
