@@ -43,7 +43,6 @@ nmap('<leader>fw', tele.lsp_workspace_symbols)
 nmap('<leader>fh', tele.help_tags)
 nmap('<leader>gc', tele.git_commits)
 nmap('<leader>gb', tele.git_branches)
-nmap('<leader>ts', tele.treesitter)
 
 nmap('<leader>rr', tele.command_history)
 nmap("<leader><leader>c", tele.commands)

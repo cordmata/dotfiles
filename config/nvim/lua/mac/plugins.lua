@@ -13,17 +13,13 @@ vim.opt.rtp:prepend(lazypath)
 
 
 local plugins = {
-    'mattn/emmet-vim',
     'editorconfig/editorconfig-vim',
-    'mbbill/undotree',
-    'mfussenegger/nvim-dap',
     'RRethy/nvim-base16',
-    'direnv/direnv.vim',
-
     'tpope/vim-fugitive',
     'tpope/vim-commentary',
     'tpope/vim-rhubarb',     -- git browse for Github
     'tommcdo/vim-fubitive',  -- git browse for Bitbucket
+
     {
         'lewis6991/gitsigns.nvim',
         config = function()
@@ -37,52 +33,6 @@ local plugins = {
             require('lualine').setup()
         end
     },
-
-    {
-        'nvim-treesitter/nvim-treesitter',
-        cmd = 'TSUpdate',
-        config = function()
-            require("nvim-treesitter.configs").setup({
-                ensured_installed = {
-                    "bash",
-                    "comment",
-                    "css",
-                    "html",
-                    "javascript",
-                    "jsdoc",
-                    "jsonc",
-                    "lua",
-                    "markdown",
-                    "regex",
-                    "scss",
-                    "toml",
-                    "typescript",
-                    "yaml",
-                    "rust",
-                    "python",
-                    "go",
-                    "java",
-                    "kotlin",
-                    "groovy",
-                    "fish",
-                },
-                highlight = {
-                    enable = true,
-                },
-                incremental_selection = {
-                    enable = true,
-                    keymaps = {
-                        init_selection = "<leader>vv",
-                        node_incremental = "vj",
-                        scope_incremental = "VV",
-                        node_decremental = "vk",
-                    },
-                },
-            })
-        end
-    },
-
-    'nvim-treesitter/nvim-treesitter-context',
 
     {
         'nvim-telescope/telescope.nvim',
@@ -108,30 +58,7 @@ local plugins = {
         end
     },
 
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        dependencies = {
-            -- LSP Support
-            'neovim/nvim-lspconfig',
-            'williamboman/mason.nvim',
-            'williamboman/mason-lspconfig.nvim',
-
-            -- Autocompletion
-            'hrsh7th/nvim-cmp',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-            'saadparwaiz1/cmp_luasnip',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-nvim-lua',
-
-            -- Snippets
-            'L3MON4D3/LuaSnip',
-            'rafamadriz/friendly-snippets',
-        }
-    },
-
 }
 
 require("lazy").setup(plugins, {})
-
 

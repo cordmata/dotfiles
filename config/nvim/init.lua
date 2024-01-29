@@ -43,7 +43,6 @@ opt.splitbelow = true            -- bool: Place new window below the current one
 
 require("mac.plugins")
 require("mac.keymaps")
-require("mac.lsp")
 
 -- load a local module if exists
 pcall(require, "local")
