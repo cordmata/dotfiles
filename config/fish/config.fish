@@ -5,7 +5,7 @@ set -Ux VAULT_SKIP_VERIFY 1
 set -Ux LENS_DISABLE_GPU true
 set -Ux XDG_CONFIG_HOME "$HOME/.config"
 
-fish_add_path '/Applications/IntelliJ IDEA.app/Contents/MacOS' $HOME/.maven/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
+fish_add_path '/Applications/Visual Studio Code.app/Contents/Resources/app/bin' '/Applications/IntelliJ IDEA.app/Contents/MacOS' $HOME/.maven/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
 
 if type -q nvim
   abbr -a vim nvim
