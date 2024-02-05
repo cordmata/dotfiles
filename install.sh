@@ -25,12 +25,6 @@ backup "$NVIM_LUA/mac"
 ln -sf "$DOTFILES/config/nvim/init.lua" "$NVIM_INIT"
 ln -sf "$DOTFILES/config/nvim/lua/mac" "$NVIM_LUA"
 
-HELIX_DIR="$HOME/.config/helix"
-HELIX_CONFIG="$HELIX_DIR/config.toml"
-mkdir -p "$HELIX_DIR"
-backup "$HELIX_CONFIG"
-ln -sf "$DOTFILES/config/helix/config.toml" "$HELIX_CONFIG"
-
 FISH_DIR="$HOME/.config/fish"
 ln -sf "$DOTFILES/config/fish/config.fish" "$FISH_DIR/config.fish"
 
