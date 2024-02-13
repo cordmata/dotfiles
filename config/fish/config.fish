@@ -41,12 +41,17 @@ abbr -a gst git status
 abbr -a gsw git switch
 abbr -a gswc git switch -c
 
-abbr -a da direnv allow
-abbr -a dot cd $HOME/.dotfiles
-
 function theme
     set _theme (functions | grep base16- | fzf)
     $_theme
+end
+
+function co
+  set code_dir "$HOME/code"
+  pushd "$code_dir"
+  set _dir (ls "$code_dir" | fzf)
+  code "$_dir"
+  popd
 end
 
 starship init fish | source
