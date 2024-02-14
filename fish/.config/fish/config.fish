@@ -16,7 +16,6 @@ abbr -a ef exec fish
 alias ls="ls -G"
 
 abbr -a f open -a Finder ./
-abbr -a conf code ~/.config/fish
 abbr -a gw ./gradlew
 abbr -a tf terraform
 abbr -a tfp terraform plan
