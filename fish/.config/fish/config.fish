@@ -11,6 +11,10 @@ if type -q nvim
   abbr -a vim nvim
 end
 
+if type -q bat
+  abbr -a cat bat
+end
+
 abbr -a ef exec fish
 
 alias ls="ls -G"
