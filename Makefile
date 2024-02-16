@@ -1,5 +1,5 @@
 deps:
-	brew install stow neovim fish fzf ripgrep bat starship
+	brew install stow neovim fish fzf fd ripgrep bat starship
 
 install:
 	mkdir -p "${HOME}/bin"

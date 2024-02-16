@@ -1,5 +1,4 @@
 set -Ux EDITOR nvim
-set -Ux FZF_DEFAULT_COMMAND 'rg --files'
 set -Ux PAGER less
 set -Ux VAULT_SKIP_VERIFY 1
 set -Ux LENS_DISABLE_GPU true
