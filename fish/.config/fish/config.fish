@@ -57,3 +57,9 @@ function co
 end
 
 starship init fish | source
+
+set _fzf_key_bindings /opt/homebrew/opt/fzf/shell/key-bindings.fish
+if test -f $_fzf_key_bindings
+  source $_fzf_key_bindings
+  fzf_key_bindings
+end
