@@ -1,0 +1,17 @@
+format = """
+[┌─❇](bold green) $directory$git_branch$git_commit$git_state$git_status$golang$python$java$kotlin$nodejs\
+(\n[│](bold green)$kubernetes)\
+(\n[│](bold green)$aws)\
+\n[└─❇](bold green) $cmd_duration$jobs$time$status$character"""
+
+[kubernetes]
+disabled = false
+symbol = " "
+format = 'as [$symbol$context( \($namespace\))]($style)'
+
+[status]
+symbol = '🔴 '
+disabled = false
+
+[jobs]
+symbol = " ✦"
