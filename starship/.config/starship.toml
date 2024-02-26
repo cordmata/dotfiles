@@ -6,7 +6,6 @@ format = """
 
 [kubernetes]
 disabled = false
-symbol = " "
 format = 'as [$symbol$context( \($namespace\))]($style)'
 
 [status]
