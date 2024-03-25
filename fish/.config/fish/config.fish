@@ -4,7 +4,7 @@ set -Ux VAULT_SKIP_VERIFY 1
 set -Ux LENS_DISABLE_GPU true
 set -Ux XDG_CONFIG_HOME "$HOME/.config"
 
-fish_add_path '/Applications/Visual Studio Code.app/Contents/Resources/app/bin' '/Applications/IntelliJ IDEA.app/Contents/MacOS' $HOME/.maven/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
+fish_add_path '/Applications/Visual Studio Code.app/Contents/Resources/app/bin' '/Applications/IntelliJ IDEA.app/Contents/MacOS' /opt/homebrew/bin $HOME/.maven/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
 
 if type -q nvim
   abbr -a vim nvim
@@ -58,6 +58,8 @@ end
 
 starship init fish | source
 
+export FZF_CTRL_T_COMMAND="fd --hidden --exclude '.git' --exclude 'node_modules' --max-depth 1 --type d"
+export FZF_ALT_C_COMMAND="fd --hidden --exclude '.git' --exclude 'node_modules' --max-depth 1 --type d"
 function fish_user_key_bindings
     fzf_key_bindings
 end
