@@ -6,6 +6,7 @@ g.mapleader = " "
 -- Colors
 g.t_co = 256
 g.background = "dark"
+g.have_nerd_font = true
 opt.syntax = "ON"                -- str:  Allow syntax highlighting
 opt.termguicolors = true         -- bool: If term supports ui color then enable
 
