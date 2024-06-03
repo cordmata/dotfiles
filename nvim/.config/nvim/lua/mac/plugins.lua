@@ -30,7 +30,7 @@ local plugins = {
     {
         'nvim-lualine/lualine.nvim',
         config = function()
-            require('lualine').setup()
+            require('lualine').setup {}
         end
     },
 
@@ -58,6 +58,20 @@ local plugins = {
         end
     },
 
+    {
+        "neovim/nvim-lspconfig",
+        config = function() end
+    },
+
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("oil").setup {}
+        end
+    },
 }
 
 require("lazy").setup(plugins, {})
