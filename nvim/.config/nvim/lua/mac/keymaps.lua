@@ -40,6 +40,7 @@ nmap('<leader>fb', tele.buffers)
 nmap('<leader>fo', tele.lsp_document_symbols)
 nmap('<leader>fw', tele.lsp_workspace_symbols)
 nmap('<leader>fh', tele.help_tags)
+nmap('<leader>gf', tele.git_files)
 nmap('<leader>gc', tele.git_commits)
 nmap('<leader>gb', tele.git_branches)
 
