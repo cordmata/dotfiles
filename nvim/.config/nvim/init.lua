@@ -41,6 +41,14 @@ opt.tabstop = 4                  -- num:  Number of spaces tabs count for
 opt.splitright = true            -- bool: Place new window to right of current one
 opt.splitbelow = true            -- bool: Place new window below the current one
 
+-- create a Browse command to enable GBrowse when netrw is disabled
+vim.api.nvim_create_user_command(
+  'Browse',
+  function (opts)
+    vim.fn.system { 'open', opts.fargs[1] }
+  end,
+  { nargs = 1 }
+)
 
 require("mac.plugins")
 require("mac.keymaps")
