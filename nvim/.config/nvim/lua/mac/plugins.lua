@@ -19,6 +19,7 @@ local plugins = {
     'tpope/vim-commentary',
     'tpope/vim-rhubarb',     -- git browse for Github
     'tommcdo/vim-fubitive',  -- git browse for Bitbucket
+    'github/copilot.vim',
 
     {
         'lewis6991/gitsigns.nvim',
@@ -65,6 +66,42 @@ local plugins = {
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("oil").setup {}
+        end
+    },
+
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        config = function ()
+            local configs = require("nvim-treesitter.configs")
+            configs.setup({
+                ensure_installed = {
+                    "c",
+                    "fish",
+                    "go",
+                    "gomod",
+                    "gotmpl",
+                    "groovy",
+                    "hcl",
+                    "html",
+                    "java",
+                    "javascript",
+                    "json",
+                    "kotlin",
+                    "lua",
+                    "python",
+                    "terraform",
+                    "toml",
+                    "typescript",
+                    "vim",
+                    "vimdoc",
+                    "xml",
+                    "yaml",
+                },
+                sync_install = false,
+                highlight = { enable = true },
+                indent = { enable = true },
+            })
         end
     },
 }
