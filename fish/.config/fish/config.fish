@@ -1,8 +1,8 @@
-set -Ux EDITOR nvim
-set -Ux PAGER less
-set -Ux VAULT_SKIP_VERIFY 1
-set -Ux LENS_DISABLE_GPU true
-set -Ux XDG_CONFIG_HOME "$HOME/.config"
+set -gx EDITOR nvim
+set -gx PAGER less
+set -gx VAULT_SKIP_VERIFY 1
+set -gx LENS_DISABLE_GPU true
+set -gx XDG_CONFIG_HOME "$HOME/.config"
 
 fish_add_path '/Applications/Visual Studio Code.app/Contents/Resources/app/bin' '/Applications/IntelliJ IDEA.app/Contents/MacOS' /opt/homebrew/bin /opt/homebrew/sbin $HOME/.maven/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
 
