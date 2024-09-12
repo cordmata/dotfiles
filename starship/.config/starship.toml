@@ -4,6 +4,8 @@ format = """
 (\n[│](bold green)$aws)\
 \n[└─❇](bold green) $cmd_duration$jobs$time$status$character"""
 
+command_timeout = 2000
+
 [kubernetes]
 disabled = false
 format = 'as [$symbol$context( \($namespace\))]($style)'

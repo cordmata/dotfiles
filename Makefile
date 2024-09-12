@@ -21,6 +21,7 @@ install:
 	stow editorconfig
 	stow intellij
 	stow starship
+	stow kitty
 
 	stow vault
 	echo "token_helper = \"${HOME}/bin/vault-token-helper\"" >> "$$HOME/.vault"
