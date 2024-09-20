@@ -1,5 +1,5 @@
 set -gx EDITOR nvim
-set -gx PAGER less
+set -gx PAGER less -r
 set -gx VAULT_SKIP_VERIFY 1
 set -gx LENS_DISABLE_GPU true
 set -gx XDG_CONFIG_HOME "$HOME/.config"
