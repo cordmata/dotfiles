@@ -68,11 +68,11 @@ dX.    9Xb      .dXb    __                         __    dXb.     dXP     .Xb
                                `             '"
 
 function fish_greeting
-  function rainbow
-    type -q lolcat
-    and lolcat
-    or tee
-  end
-  printf '=%.0s' (seq 1 $(tput cols)) | rainbow
-  echo
+  # function rainbow
+  #   type -q lolcat
+  #   and lolcat
+  #   or tee
+  # end
+  # printf '=%.0s' (seq 1 $(tput cols)) | rainbow
+  # echo
 end
