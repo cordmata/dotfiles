@@ -23,16 +23,12 @@ local plugins = {
 
     {
         'lewis6991/gitsigns.nvim',
-        config = function()
-            require("gitsigns").setup {}
-        end
+        opts = {}
     },
 
     {
         'nvim-lualine/lualine.nvim',
-        config = function()
-            require('lualine').setup {}
-        end
+        opts = {}
     },
 
     {
@@ -40,24 +36,23 @@ local plugins = {
         dependencies = {
             'nvim-lua/plenary.nvim'
         },
-        config = function()
-            require("telescope").setup {
-                defaults = {
-                    mappings = {
-                        n = {
-                            ['<c-d>'] = require('telescope.actions').delete_buffer
-                        },
-                        i = {
-                            ['<c-d>'] = require('telescope.actions').delete_buffer
-                        }
+        opts = {
+            defaults = {
+                mappings = {
+                    n = {
+                        ['<c-d>'] = 'delete_buffer'
+                    },
+                    i = {
+                        ['<c-d>'] = 'delete_buffer'
                     }
-                },
-            }
-        end
+                }
+            },
+        },
     },
 
     {
         "folke/trouble.nvim",
+        opts = {},
         dependencies = {
             "nvim-tree/nvim-web-devicons"
         },
@@ -72,7 +67,7 @@ local plugins = {
                 "<leader>xX",
                 "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
                 desc = "Buffer Diagnostics (Trouble)",
-            },
+          },
             {
                 "<leader>cs",
                 "<cmd>Trouble symbols toggle focus=false<cr>",
@@ -94,13 +89,11 @@ local plugins = {
                 desc = "Quickfix List (Trouble)",
             },
         },
-        config = function()
-            require('trouble').setup {}
-        end
     },
 
     {
         "neovim/nvim-lspconfig",
+        opts = {},
         config = function() end
     },
 
@@ -108,9 +101,6 @@ local plugins = {
         'stevearc/oil.nvim',
         opts = {},
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function()
-            require("oil").setup {}
-        end
     },
 
     {
