@@ -27,7 +27,6 @@ nmap('<leader>gf', ':Git fetch --all --prune --jobs=10<cr>')
 
 nmap("<leader>u", vim.cmd.UndotreeToggle)
 nmap("<leader>//", ':%s/')
-nmap("<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
 
 -- Telescope
 local tele = require('telescope.builtin')
