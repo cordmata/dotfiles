@@ -56,6 +56,14 @@ function co
   popd
 end
 
+function v
+  set code_dir "$HOME/code"
+  pushd "$code_dir"
+  set _dir (ls "$code_dir" | fzf)
+  cd "$_dir"
+  nvim .
+end
+
 starship init fish | source
 
 export FZF_CTRL_T_COMMAND="fd --hidden --exclude '.git' --exclude 'node_modules' --max-depth 1 --type d"
