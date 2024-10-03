@@ -58,9 +58,8 @@ end
 
 function v
   set code_dir "$HOME/code"
-  pushd "$code_dir"
-  set _dir (ls "$code_dir" | fzf)
-  cd "$_dir"
+  cd "$code_dir"
+  cd (ls | fzf)
   nvim .
 end
 
