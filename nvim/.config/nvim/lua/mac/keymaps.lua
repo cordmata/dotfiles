@@ -22,7 +22,7 @@ nmap('<leader>cf', ':Telescope find_files follow=true cwd=$HOME/.config/fish<cr>
 
 nmap('<leader>gs', ':Git<cr>')
 nmap('<leader>gp', ':Git pull<cr>')
-nmap('<leader>gff', ':Git fetch --all --prune --jobs=10<cr>')
+nmap('<leader>gf', ':Git fetch --all --prune --jobs=10<cr>')
 
 nmap("<leader>u", vim.cmd.UndotreeToggle)
 nmap("<leader>//", ':%s/')
