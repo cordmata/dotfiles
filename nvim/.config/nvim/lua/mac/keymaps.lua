@@ -20,6 +20,10 @@ nmap('<leader>1', ':only<cr>')
 nmap('<leader>cv', ':Telescope find_files follow=true cwd=$HOME/.config/nvim<cr>')
 nmap('<leader>cf', ':Telescope find_files follow=true cwd=$HOME/.config/fish<cr>')
 
+nmap('<leader>cr', vim.lsp.buf.rename)
+nmap('<leader>ca', vim.lsp.buf.code_action)
+nmap('<leader>ci', vim.lsp.buf.implementation)
+
 nmap('<leader>gs', ':Git<cr>')
 nmap('<leader>gp', ':Git pull<cr>')
 nmap('<leader>gf', ':Git fetch --all --prune --jobs=10<cr>')
