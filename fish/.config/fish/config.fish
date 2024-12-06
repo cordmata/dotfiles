@@ -14,6 +14,10 @@ if type -q bat
   abbr -a cat bat
 end
 
+if type -q lazygit
+  abbr -a lg lazygit
+end
+
 abbr -a ef exec fish
 
 alias ls="ls -G"
