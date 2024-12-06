@@ -22,6 +22,7 @@ install:
 	stow intellij
 	stow starship
 	stow kitty
+	stow lazygit
 
 	stow vault
 	echo "token_helper = \"${HOME}/bin/vault-token-helper\"" >> "$$HOME/.vault"
