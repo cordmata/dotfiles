@@ -29,7 +29,9 @@ nmap('<leader>gp', ':Git pull<cr>')
 nmap('<leader>gf', ':Git fetch --all --prune --jobs=10<cr>')
 
 nmap("<leader>u", vim.cmd.UndotreeToggle)
-nmap("<leader>//", ':%s/')
+nmap("<leader>//", function()
+    vim.api.nvim_feedkeys(':%s/', 'n', false)
+end)
 
 -- Telescope
 local tele = require('telescope.builtin')
