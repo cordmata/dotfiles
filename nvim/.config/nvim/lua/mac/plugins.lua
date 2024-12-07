@@ -36,18 +36,11 @@ local plugins = {
         dependencies = {
             'nvim-lua/plenary.nvim'
         },
-        opts = {
-            defaults = {
-                mappings = {
-                    n = {
-                        ['<c-d>'] = 'delete_buffer'
-                    },
-                    i = {
-                        ['<c-d>'] = 'delete_buffer'
-                    }
-                }
-            },
-        },
+        config = function()
+           require("telescope").setup({
+                defaults = require('telescope.themes').get_ivy()
+            })
+        end
     },
 
     {
