@@ -20,16 +20,9 @@ local plugins = {
     'tpope/vim-rhubarb',     -- git browse for Github
     'tommcdo/vim-fubitive',  -- git browse for Bitbucket
     'github/copilot.vim',
-
-    {
-        'lewis6991/gitsigns.nvim',
-        opts = {}
-    },
-
-    {
-        'nvim-lualine/lualine.nvim',
-        opts = {}
-    },
+    'lewis6991/gitsigns.nvim',
+    'nvim-lualine/lualine.nvim',
+    'neovim/nvim-lspconfig',
 
     {
         'nvim-telescope/telescope.nvim',
@@ -85,12 +78,6 @@ local plugins = {
     },
 
     {
-        "neovim/nvim-lspconfig",
-        opts = {},
-        config = function() end
-    },
-
-    {
         'stevearc/oil.nvim',
         opts = {},
         dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -100,8 +87,7 @@ local plugins = {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         config = function ()
-            local configs = require("nvim-treesitter.configs")
-            configs.setup({
+            require("nvim-treesitter.configs").setup({
                 ensure_installed = {
                     "c",
                     "fish",
@@ -125,11 +111,36 @@ local plugins = {
                     "xml",
                     "yaml",
                 },
+                modules = {},
+                ignore_install = {},
+                auto_install = true,
                 sync_install = false,
                 highlight = { enable = true },
                 indent = { enable = true },
             })
         end
+    },
+
+    {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+            library = {
+                -- See the configuration section for more details
+                -- Load luvit types when the `vim.uv` word is found
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+        },
+    },
+    { -- optional cmp completion source for require statements and module annotations
+        "hrsh7th/nvim-cmp",
+        opts = function(_, opts)
+            opts.sources = opts.sources or {}
+            table.insert(opts.sources, {
+                name = "lazydev",
+                group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+            })
+        end,
     },
 }
 
