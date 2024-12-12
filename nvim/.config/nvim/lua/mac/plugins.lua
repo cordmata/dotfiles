@@ -21,8 +21,12 @@ local plugins = {
     'tommcdo/vim-fubitive',  -- git browse for Bitbucket
     'github/copilot.vim',
     'lewis6991/gitsigns.nvim',
-    'nvim-lualine/lualine.nvim',
     'neovim/nvim-lspconfig',
+
+    {
+        'nvim-lualine/lualine.nvim',
+        opts = {},
+    },
 
     {
         'nvim-telescope/telescope.nvim',
