@@ -147,7 +147,7 @@ local plugins = {
             'hrsh7th/cmp-vsnip',
             'hrsh7th/vim-vsnip',
         },
-        config = function(opts)
+        config = function()
             local cmp = require('cmp')
             cmp.setup({
                 snippet = {
