@@ -23,6 +23,7 @@ install:
 	stow starship
 	stow kitty
 	stow lazygit
+	stow ripgrep
 
 	mkdir -p "${HOME}/.config/fd"
 	stow fd

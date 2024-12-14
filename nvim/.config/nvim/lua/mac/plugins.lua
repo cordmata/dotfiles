@@ -19,11 +19,15 @@ local plugins = {
     'tpope/vim-rhubarb',     -- git browse for Github
     'tommcdo/vim-fubitive',  -- git browse for Bitbucket
     'github/copilot.vim',
-    'lewis6991/gitsigns.nvim',
     'neovim/nvim-lspconfig',
 
     {
         'nvim-lualine/lualine.nvim',
+        opts = {},
+    },
+
+    {
+        'lewis6991/gitsigns.nvim',
         opts = {},
     },
 

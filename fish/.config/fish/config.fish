@@ -3,6 +3,7 @@ set -gx PAGER less -r
 set -gx VAULT_SKIP_VERIFY 1
 set -gx LENS_DISABLE_GPU true
 set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep.conf"
 
 fish_add_path '/Applications/Visual Studio Code.app/Contents/Resources/app/bin' '/Applications/IntelliJ IDEA.app/Contents/MacOS' /opt/homebrew/bin /opt/homebrew/sbin $HOME/.maven/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
 
