@@ -52,6 +52,7 @@ function theme
     $_theme
 end
 
+# open a directory in $HOME/code with vscode using a fuzzy finder
 function co
   set code_dir "$HOME/code"
   pushd "$code_dir"
@@ -60,6 +61,7 @@ function co
   popd
 end
 
+# open a directory in $HOME/code in neovim using a fuzzy finder
 function v
   set code_dir "$HOME/code"
   cd "$code_dir"
