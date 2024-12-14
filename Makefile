@@ -24,6 +24,9 @@ install:
 	stow kitty
 	stow lazygit
 
+	mkdir -p "${HOME}/.config/fd"
+	stow fd
+
 	stow vault
 	echo "token_helper = \"${HOME}/bin/vault-token-helper\"" >> "$$HOME/.vault"
 
