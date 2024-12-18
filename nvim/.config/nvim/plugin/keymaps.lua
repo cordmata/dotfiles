@@ -50,8 +50,4 @@ nmap('<leader>gb', tele.git_branches)
 nmap('<leader>rr', tele.command_history)
 nmap("<leader><leader>c", tele.commands)
 
-local t_opts = {buffer = 0, silent = true}
-map('t', '<esc>', [[<C-\><C-n>]], t_opts)
-map('t', 'jk', [[<C-\><C-n>]], t_opts)
-map('t', '<C-j>', [[<Cmd>wincmd w<CR>]], t_opts)
-map('t', '<C-h>', [[<Cmd>wincmd W<CR>]], t_opts)
+map('t', '<esc><esc>', "<c-\\><c-n>")
