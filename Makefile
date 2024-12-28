@@ -24,6 +24,7 @@ install:
 	stow kitty
 	stow lazygit
 	stow ripgrep
+	stow ghostty
 
 	mkdir -p "${HOME}/.config/fd"
 	stow fd
