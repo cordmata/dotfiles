@@ -77,8 +77,3 @@ export FZF_ALT_C_COMMAND="fd --hidden --exclude '.git' --exclude 'node_modules' 
 function fish_user_key_bindings
     fzf_key_bindings
 end
-
-set -gx DEFAULT_PYTHON_VENV "$HOME/python/dev"
-if test -d "$DEFAULT_PYTHON_VENV"
-    source "$DEFAULT_PYTHON_VENV/bin/activate.fish"
-end
