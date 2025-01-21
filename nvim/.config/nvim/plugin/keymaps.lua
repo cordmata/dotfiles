@@ -44,6 +44,7 @@ nmap('<leader>fo', tele.lsp_document_symbols)
 nmap('<leader>fw', tele.lsp_workspace_symbols)
 nmap('<leader>fh', tele.help_tags)
 nmap('<leader>fg', '<cmd>Telescope git_files previewer=false <cr>')
+nmap('<leader>fu', '<cmd>Telescope lsp_references<cr>')
 nmap('<leader>gc', tele.git_commits)
 nmap('<leader>gb', tele.git_branches)
 
