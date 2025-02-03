@@ -15,7 +15,11 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ import = "mac.plugins" })
+require("lazy").setup({ import = "mac.plugins" }, {
+    ui = {
+        border = "rounded",
+    },
+})
 
 -- load a local module if exists
 pcall(require, "local")
