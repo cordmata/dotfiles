@@ -4,7 +4,7 @@ return  {
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {},
         config = function()
-            require("fzf-lua").setup({ { "ivy", "hide" } })
+            require("fzf-lua").setup({ { "hide" } })
         end
     },
 }
