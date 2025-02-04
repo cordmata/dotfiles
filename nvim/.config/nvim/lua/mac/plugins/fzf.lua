@@ -4,7 +4,11 @@ return  {
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {},
         config = function()
-            require("fzf-lua").setup({ { "hide" } })
+            require("fzf-lua").setup {
+                winopts = {
+                    preview = { hidden = true },
+                }
+            }
         end
     },
 }
