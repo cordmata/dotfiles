@@ -39,4 +39,6 @@ nmap('<leader>ca', fzf.lsp_code_actions)
 
 nmap('<leader>ch', fzf.command_history)
 
-map('t', '<esc><esc>', "<c-\\><c-n>")
+nmap('<leader>zz', ':FzfLua<cr>')
+
+map('t', '<esc><esc>', "<c-\\><c-n>") -- use esc to return to normal mode when in terminal mode
