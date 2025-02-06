@@ -48,6 +48,8 @@ abbr -a gst git status
 abbr -a gsw git switch
 abbr -a gswc git switch -c
 
+abbr -a cdd cd "$HOME/.dotfiles"
+
 function theme
     set _theme (functions | grep base16- | fzf)
     $_theme
