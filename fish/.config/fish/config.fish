@@ -64,12 +64,10 @@ function co
   popd
 end
 
-# open a directory in $HOME/code in neovim using a fuzzy finder
-function v
-  set code_dir "$HOME/code"
-  cd "$code_dir"
+# `cd` into to a directory inside of $HOME/code using a fuzzy finder
+function c
+  cd "$HOME/code"
   cd (ls | fzf)
-  nvim .
 end
 
 starship init fish | source
