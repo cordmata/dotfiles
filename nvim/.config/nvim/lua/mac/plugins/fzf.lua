@@ -9,6 +9,7 @@ return  {
                     preview = { hidden = true },
                 }
             }
+            require("fzf-lua").register_ui_select()
         end
     },
 }
