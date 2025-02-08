@@ -29,16 +29,15 @@ end)
 local fzf = require('fzf-lua')
 nmap('<leader>fr', fzf.resume)
 nmap('<leader>ff', fzf.files)
-nmap('<leader>fs', fzf.live_grep)
+nmap('<leader>fs', ':FzfLua live_grep winopts.preview.hidden=false<cr>')
 nmap('<leader>fb', fzf.buffers)
 nmap('<leader>fu', fzf.lsp_references)
 nmap('<leader>gc', fzf.git_commits)
 nmap('<leader>gb', fzf.git_branches)
-nmap('<leader>cc', ':FzfLua files cwd=$HOME/.config<cr>')
 nmap('<leader>ca', fzf.lsp_code_actions)
+nmap('<leader>cv', ':FzfLua files cwd=$HOME/.config/nvim<cr>')
 
 nmap('<leader>ch', fzf.command_history)
 
 nmap('<leader>zz', ':FzfLua<cr>')
-
 map('t', '<esc><esc>', "<c-\\><c-n>") -- use esc to return to normal mode when in terminal mode
