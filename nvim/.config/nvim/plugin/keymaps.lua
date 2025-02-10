@@ -35,6 +35,10 @@ nmap('<leader>cr', vim.lsp.buf.rename)
 nmap('<leader>cv', ':FzfLua files cwd=$HOME/.config/nvim fd_opts=--follow<cr>')
 nmap('<leader>cf', ':FzfLua files cwd=$HOME/.config/fish fd_opts=--follow<cr>')
 
+nmap('<leader>dd', vim.diagnostic.open_float)
+nmap('<leader>ds', vim.diagnostic.show)
+nmap('<leader>dh', vim.diagnostic.hide)
+
 nmap('<leader>p', fzf.zoxide)
 
 nmap('<leader>zz', ':FzfLua<cr>')
