@@ -1,5 +1,5 @@
 deps:
-	brew install stow neovim fish fzf fd ripgrep bat starship font-symbols-only-nerd-font font-fira-code jesseduffield/lazygit/lazygit
+	brew install stow neovim fish fzf fd ripgrep bat starship zoxide font-symbols-only-nerd-font font-fira-code jesseduffield/lazygit/lazygit
 
 install:
 	mkdir -p "${HOME}/bin"

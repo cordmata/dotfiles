@@ -71,6 +71,7 @@ function c
 end
 
 starship init fish | source
+zoxide init fish | source
 
 export FZF_CTRL_T_COMMAND="fd --hidden --exclude '.git' --exclude 'node_modules' --max-depth 1 --type d"
 export FZF_ALT_C_COMMAND="fd --hidden --exclude '.git' --exclude 'node_modules' --max-depth 1 --type d"

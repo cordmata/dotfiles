@@ -35,9 +35,11 @@ nmap('<leader>fu', fzf.lsp_references)
 nmap('<leader>gc', fzf.git_commits)
 nmap('<leader>gb', fzf.git_branches)
 nmap('<leader>ca', fzf.lsp_code_actions)
-nmap('<leader>cv', ':FzfLua files cwd=$HOME/.config/nvim<cr>')
+nmap('<leader>cv', ':FzfLua files cwd=$HOME/.config/nvim fd_opts=--follow<cr>')
 
 nmap('<leader>ch', fzf.command_history)
+
+nmap('<leader>p', fzf.zoxide)
 
 nmap('<leader>zz', ':FzfLua<cr>')
 map('t', '<esc><esc>', "<c-\\><c-n>") -- use esc to return to normal mode when in terminal mode
