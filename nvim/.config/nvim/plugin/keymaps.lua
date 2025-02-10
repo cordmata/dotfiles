@@ -39,6 +39,8 @@ nmap('<leader>dd', vim.diagnostic.open_float)
 nmap('<leader>ds', vim.diagnostic.show)
 nmap('<leader>dh', vim.diagnostic.hide)
 
+nmap('<leader>jq', ':%!jq .<cr>')
+
 nmap('<leader>p', fzf.zoxide)
 
 nmap('<leader>zz', ':FzfLua<cr>')
