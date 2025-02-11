@@ -10,6 +10,7 @@ end
 
 nmap('<c-j>', ':bn <cr>')
 nmap('<c-k>', ':bp <cr>')
+nmap('<c-c>', ':bd <cr>')
 
 nmap('<leader>-', ':Oil<cr>')
 nmap("<leader>//", function()
@@ -29,11 +30,11 @@ nmap('<leader>fb', fzf.buffers)
 nmap('<leader>fu', fzf.lsp_references)
 
 nmap('<leader>bs', function ()
-    vim.cmd('vnew')
+    vim.cmd('vsplit')
+    vim.cmd('buffer ' .. vim.fn.bufnr('__Scratch__', true))
     vim.cmd('setlocal buftype=nofile')
     vim.cmd('setlocal bufhidden=hide')
     vim.cmd('setlocal noswapfile')
-    vim.cmd('file __Scratch__')
 end)
 
 nmap('<leader>ca', fzf.lsp_code_actions)
