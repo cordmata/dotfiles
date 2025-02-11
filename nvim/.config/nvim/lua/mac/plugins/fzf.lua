@@ -7,7 +7,8 @@ return  {
             require("fzf-lua").setup {
                 winopts = {
                     preview = { hidden = true },
-                }
+                },
+                files = { follow = true }
             }
             require("fzf-lua").register_ui_select()
         end
