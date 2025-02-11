@@ -11,7 +11,6 @@ end
 nmap('<c-j>', ':bn <cr>')
 nmap('<c-k>', ':bp <cr>')
 
-nmap('<leader>w', ':bp<cr>:bd #<cr>')
 nmap('<leader>-', ':Oil<cr>')
 nmap("<leader>//", function()
     vim.api.nvim_feedkeys(':%s/', 'n', false)
@@ -28,6 +27,14 @@ nmap('<leader>ff', fzf.files)
 nmap('<leader>fs', ':FzfLua live_grep winopts.preview.hidden=false<cr>')
 nmap('<leader>fb', fzf.buffers)
 nmap('<leader>fu', fzf.lsp_references)
+
+nmap('<leader>bs', function ()
+    vim.cmd('vnew')
+    vim.cmd('setlocal buftype=nofile')
+    vim.cmd('setlocal bufhidden=hide')
+    vim.cmd('setlocal noswapfile')
+    vim.cmd('file __Scratch__')
+end)
 
 nmap('<leader>ca', fzf.lsp_code_actions)
 nmap('<leader>ch', fzf.command_history)
