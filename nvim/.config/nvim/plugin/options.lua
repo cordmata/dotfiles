@@ -54,3 +54,13 @@ vim.api.nvim_create_user_command(
   { nargs = 1 }
 )
 
+-- disable spelling checks in the builtin terminal
+vim.api.nvim_create_autocmd('TermOpen', {
+    callback = function()
+        vim.opt_local.spell = false
+        vim.opt_local.number = false
+        vim.opt_local.relativenumber = false
+        vim.opt_local.signcolumn = "no"
+    end,
+})
+
