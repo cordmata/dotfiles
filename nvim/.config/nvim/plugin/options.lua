@@ -54,8 +54,47 @@ vim.api.nvim_create_user_command(
   { nargs = 1 }
 )
 
+local function open_scratch_buffer()
+  local current_win = vim.api.nvim_get_current_win()
+  local wins = vim.api.nvim_tabpage_list_wins(0)
+  local right_win = nil
+
+  local scratch = vim.fn.bufnr('__Scratch__', true)
+  if scratch == vim.api.nvim_get_current_buf() then
+      return
+  end
+
+  -- Find the window to the right of the current one
+  for _, win in ipairs(wins) do
+    local win_pos = vim.fn.win_screenpos(win)
+    local cur_pos = vim.fn.win_screenpos(current_win)
+    if win_pos[2] > cur_pos[2] then
+      right_win = win
+      break
+    end
+  end
+
+  if right_win then
+    -- Focus the existing right window
+    vim.api.nvim_set_current_win(right_win)
+  elseif #wins == 1 then
+    -- Create a new vertical split
+    vim.cmd('vsplit')
+  end
+
+  vim.cmd('buffer ' .. scratch)
+  vim.bo.buftype = 'nofile'
+  vim.bo.bufhidden = 'hide'
+  vim.bo.swapfile = false
+end
+
+vim.api.nvim_create_user_command('Scratch', open_scratch_buffer, {})
+
+local mygroup = vim.api.nvim_create_augroup("Matty", { clear = true })
+
 -- disable spelling checks in the builtin terminal
 vim.api.nvim_create_autocmd('TermOpen', {
+    group = mygroup,
     callback = function()
         vim.opt_local.spell = false
         vim.opt_local.number = false

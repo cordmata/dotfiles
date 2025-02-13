@@ -30,11 +30,12 @@ nmap('<leader>fb', fzf.buffers)
 nmap('<leader>fu', fzf.lsp_references)
 
 nmap('<leader>bs', function ()
-    vim.cmd('vsplit')
-    vim.cmd('buffer ' .. vim.fn.bufnr('__Scratch__', true))
-    vim.cmd('setlocal buftype=nofile')
-    vim.cmd('setlocal bufhidden=hide')
-    vim.cmd('setlocal noswapfile')
+    local bufnr = vim.fn.bufnr('__Scratch__', true)
+    if bufnr == vim.api.nvim_get_current_buf() then
+        vim.cmd('close')
+    else
+        vim.cmd('Scratch')
+    end
 end)
 
 nmap('<leader>ca', fzf.lsp_code_actions)
