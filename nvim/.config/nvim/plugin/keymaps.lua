@@ -52,5 +52,7 @@ nmap('<leader>jq', ':%!jq .<cr>')
 
 nmap('<leader>p', fzf.zoxide)
 
+nmap('<leader>ss', ':set invspell<cr>')
+
 nmap('<leader>zz', ':FzfLua<cr>')
 map('t', '<esc><esc>', "<c-\\><c-n>") -- use esc to return to normal mode when in terminal mode
