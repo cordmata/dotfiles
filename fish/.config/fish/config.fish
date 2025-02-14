@@ -64,17 +64,9 @@ function co
   popd
 end
 
-# `cd` into to a directory inside of $HOME/code using a fuzzy finder
-function c
-  cd "$HOME/code"
-  cd (ls | fzf)
-end
-
 starship init fish | source
 zoxide init fish | source
 
-export FZF_CTRL_T_COMMAND="fd --hidden --exclude '.git' --exclude 'node_modules' --max-depth 1 --type d"
-export FZF_ALT_C_COMMAND="fd --hidden --exclude '.git' --exclude 'node_modules' --max-depth 1 --type d"
 function fish_user_key_bindings
     fzf_key_bindings
 end
