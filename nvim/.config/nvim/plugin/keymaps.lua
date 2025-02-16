@@ -32,7 +32,7 @@ nmap('<leader>fu', fzf.lsp_references)
 nmap('<leader>bs', function ()
     local wins = vim.api.nvim_tabpage_list_wins(0)
     local scratch = vim.fn.bufnr('__Scratch__', true)
-    if scratch == vim.api.nvim_get_current_buf() then
+    if scratch == vim.api.nvim_get_current_buf() and #wins > 1 then
         vim.cmd('quit')
     else
         if #wins > 1 then
