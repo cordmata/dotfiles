@@ -17,6 +17,7 @@ install:
 	git config --global color.ui 'true'
 	git config --global pull.rebase 'false'
 	git config --global user.name 'Matt Cordial'
+	git config --global init.defaultBranch 'main'
 
 	stow editorconfig
 	stow intellij
