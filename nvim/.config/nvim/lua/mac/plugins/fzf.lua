@@ -4,13 +4,14 @@ return  {
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {},
         config = function()
-            require("fzf-lua").setup {
+            local fzf = require('fzf-lua')
+            fzf.setup {
                 winopts = {
                     preview = { hidden = true },
                 },
-                files = { follow = true }
+                files = { follow = true },
             }
-            require("fzf-lua").register_ui_select()
+            fzf.register_ui_select()
         end
     },
 }
