@@ -58,7 +58,16 @@ nmap('<leader>dh', vim.diagnostic.hide)
 
 nmap('<leader>jq', ':%!jq .<cr>')
 
-nmap('<leader>p', fzf.zoxide)
+nmap('<leader>p', function()
+    fzf.zoxide({
+        actions = {
+            enter = function(args)
+                fzf.actions.cd(args, {})
+                vim.cmd("Oil .")
+            end
+        }
+    })
+end)
 
 nmap('<leader>ss', ':set invspell<cr>')
 
