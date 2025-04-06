@@ -5,7 +5,17 @@ set -gx LENS_DISABLE_GPU true
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep.conf"
 
-fish_add_path '/Applications/Visual Studio Code.app/Contents/Resources/app/bin' '/Applications/IntelliJ IDEA.app/Contents/MacOS' /opt/homebrew/bin /opt/homebrew/sbin $HOME/.maven/bin $HOME/.cargo/bin $HOME/go/bin $HOME/.local/bin $HOME/bin /usr/local/sbin /usr/local/bin
+fish_add_path /usr/local/sbin
+fish_add_path /usr/local/bin
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/sbin
+fish_add_path $HOME/.maven/bin
+fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/go/bin
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/bin
+fish_add_path '/Applications/Visual Studio Code.app/Contents/Resources/app/bin'
+fish_add_path '/Applications/IntelliJ IDEA.app/Contents/MacOS'
 
 if type -q nvim
   abbr -a vim nvim
