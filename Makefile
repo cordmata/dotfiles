@@ -2,6 +2,7 @@ deps:
 	brew install stow neovim fish fzf fd ripgrep bat starship zoxide jesseduffield/lazygit/lazygit
 
 install:
+	touch "${HOME}/.hushlogin"
 	mkdir -p "${HOME}/bin"
 	mkdir -p "${HOME}/.config/nvim/lua"
 	stow nvim
