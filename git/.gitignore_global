@@ -20,3 +20,4 @@ __pycache__/
 *.pyd
 .Python
 _*.http
+mise.local.toml
