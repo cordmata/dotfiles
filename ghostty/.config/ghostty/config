@@ -3,3 +3,4 @@ shell-integration = fish
 font-size = 16
 keybind = global:cmd+escape=toggle_quick_terminal
 keybind = shift+enter=text:\n
+theme = dark:catppuccin-frappe,light:catppuccin-latte
