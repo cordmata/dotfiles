@@ -1,6 +1,6 @@
 command = /opt/homebrew/bin/fish --login --interactive
 shell-integration = fish
 font-size = 16
-keybind = global:cmd+escape=toggle_quick_terminal
+keybind = global:alt+escape=toggle_quick_terminal
 keybind = shift+enter=text:\n
 theme = dark:Catppuccin Frappe,light:Catppuccin Latte
