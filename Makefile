@@ -23,7 +23,7 @@ install:
 	stow editorconfig
 	stow intellij
 	stow starship
-	stow kitty
+	stow ghostty
 	stow lazygit
 	stow ripgrep
 
