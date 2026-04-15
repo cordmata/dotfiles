@@ -50,8 +50,8 @@ abbr -a gfa git fetch --all --prune --jobs=10
 abbr -a gb git branch
 abbr -a gco git checkout
 abbr -a gcd git checkout develop
-abbr -a gcm git checkout master
-abbr -a gcma git checkout main
+abbr -a gcm git checkout main
+abbr -a gcma git checkout master
 abbr -a glg git log --oneline --all --graph
 abbr -a gst git status
 abbr -a gsw git switch
