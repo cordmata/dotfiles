@@ -46,6 +46,9 @@ opt.splitbelow = true            -- bool: Place new window below the current one
 opt.spelllang = 'en_us'
 opt.spell = false
 
+-- Whitespace Chars
+opt.listchars = 'eol:$,space:_,tab:<->,trail:~'
+
 -- create a Browse command to enable GBrowse when netrw is disabled
 vim.api.nvim_create_user_command(
   'Browse',
