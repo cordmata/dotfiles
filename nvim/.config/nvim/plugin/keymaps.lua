@@ -73,7 +73,7 @@ nmap('<leader>p', function()
     fzf.zoxide({
         actions = {
             enter = function(args)
-                fzf.actions.cd(args, {})
+                fzf.actions.zoxide_cd(args, {})
                 vim.cmd("Oil .")
             end
         }
