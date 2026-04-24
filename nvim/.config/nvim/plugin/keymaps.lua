@@ -80,6 +80,9 @@ nmap('<leader>p', function()
     })
 end)
 
+-- render Markdown with `glow`
+nmap('<leader>md', ':term glow %<cr>')
+
 -- enable/disable inline spell checking
 nmap('<leader>ss', ':set invspell<cr>')
 
