@@ -48,14 +48,15 @@ abbr -a tunnel ssh -nNT -L 5432:[RDS endpoint]:5432 jumphost
 
 abbr -a gfa git fetch --all --prune --jobs=10
 abbr -a gb git branch
-abbr -a gco git checkout
-abbr -a gcd git checkout develop
-abbr -a gcm git checkout main
+abbr -a gco git switch
+abbr -a gcm git switch main
+abbr -a gsm git switch main
 abbr -a gcma git checkout master
 abbr -a glg git log --oneline --all --graph
 abbr -a gst git status
-abbr -a gsw git switch
-abbr -a gswc git switch -c
+abbr -a gs git switch
+abbr -a gsc git switch -c
+abbr -a gbc git switch -c
 
 abbr -a cdd cd "$HOME/.dotfiles"
 
