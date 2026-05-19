@@ -33,7 +33,6 @@ abbr -a ef exec fish
 alias ls="ls -G"
 
 abbr -a f open -a Finder ./
-abbr -a gw ./gradlew
 abbr -a tf terraform
 abbr -a tfp terraform plan
 abbr -a tfpo terraform plan -out plan
@@ -57,6 +56,10 @@ abbr -a gst git status
 abbr -a gs git switch
 abbr -a gsc git switch -c
 abbr -a gbc git switch -c
+abbr -a gw git worktree
+abbr -a gwa git worktree add
+abbr -a gwr git worktree remove
+abbr -a gwl git worktree list
 
 abbr -a cdd cd "$HOME/.dotfiles"
 
