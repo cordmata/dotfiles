@@ -21,3 +21,4 @@ __pycache__/
 .Python
 _*.http
 mise.local.toml
+.claude/worktrees/
