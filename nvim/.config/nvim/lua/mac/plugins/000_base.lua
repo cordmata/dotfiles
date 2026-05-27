@@ -3,7 +3,8 @@ return  {
     'RRethy/nvim-base16',
     'tpope/vim-fugitive',
     'tpope/vim-commentary',
-    'tpope/vim-rhubarb',     -- git browse for Github
+    'tpope/vim-surround',
     'tommcdo/vim-fubitive',  -- git browse for Bitbucket
+    'tpope/vim-rhubarb',     -- git browse for Github
     'neovim/nvim-lspconfig',
 }
