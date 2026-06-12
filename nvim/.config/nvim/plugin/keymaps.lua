@@ -14,7 +14,7 @@ nmap('<c-k>', ':bp <cr>')
 nmap('<c-c>', ':bd <cr>')
 
 -- filesystem browse
-nmap('<leader>-', ':Oil<cr>')
+nmap('<leader>-', ':Oil --preview<cr>')
 
 -- quick search/replace
 nmap("<leader>//", function()
@@ -74,7 +74,7 @@ nmap('<leader>p', function()
         actions = {
             enter = function(args)
                 fzf.actions.zoxide_cd(args, {})
-                vim.cmd("Oil .")
+                vim.cmd("Oil --preview .")
             end
         }
     })
