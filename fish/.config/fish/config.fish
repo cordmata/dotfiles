@@ -12,6 +12,7 @@ fish_add_path /opt/homebrew/sbin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.local/share/mise/shims
+fish_add_path $HOME/Library/pnpm/bin
 fish_add_path $HOME/bin
 fish_add_path '/Applications/Visual Studio Code.app/Contents/Resources/app/bin'
 fish_add_path '/Applications/IntelliJ IDEA.app/Contents/MacOS'
