@@ -22,9 +22,7 @@ nmap("<leader>//", function()
 end)
 
 -- git
-nmap('<leader>gs', ':Git<cr>')
-nmap('<leader>gp', ':Git pull<cr>')
-nmap('<leader>gf', ':Git fetch --all --prune --jobs=10<cr>')
+nmap('<leader>gg', ':Neogit kind=split_below<cr>')
 nmap('<leader>gc', fzf.git_commits)
 nmap('<leader>gb', fzf.git_branches)
 
