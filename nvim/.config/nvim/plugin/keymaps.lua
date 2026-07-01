@@ -22,9 +22,22 @@ nmap("<leader>//", function()
 end)
 
 -- git
-nmap('<leader>gg', ':Neogit kind=split_below<cr>')
+nmap('<leader>gg', ':Gitsigns<cr>')
+nmap('<leader>gs', ':Git<cr>')
+nmap('<leader>gd', ':DiffviewOpen<cr>')
+nmap('<leader>gs', ':Git<cr>')
 nmap('<leader>gc', fzf.git_commits)
 nmap('<leader>gb', fzf.git_branches)
+
+nmap(']h', ':Gitsigns next_hunk<cr>')
+nmap('[h', ':Gitsigns prev_hunk<cr>')
+nmap('<leader>hs', ':Gitsigns stage_hunk<cr>')
+nmap('<leader>hp', ':Gitsigns preview_hunk<cr>')
+
+-- tabs
+nmap('<leader>tn', ':tabnext<cr>')
+nmap('<leader>tp', ':tabprevious<cr>')
+nmap('<leader>tc', ':tabclose<cr>')
 
 -- common fuzzy-finders
 nmap('<leader>fr', fzf.resume)
