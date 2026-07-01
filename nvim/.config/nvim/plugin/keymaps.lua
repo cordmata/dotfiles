@@ -29,8 +29,8 @@ nmap('<leader>gs', ':Git<cr>')
 nmap('<leader>gc', fzf.git_commits)
 nmap('<leader>gb', fzf.git_branches)
 
-nmap(']h', ':Gitsigns next_hunk<cr>')
-nmap('[h', ':Gitsigns prev_hunk<cr>')
+nmap(']c', ':Gitsigns next_hunk<cr>')
+nmap('[c', ':Gitsigns prev_hunk<cr>')
 nmap('<leader>hs', ':Gitsigns stage_hunk<cr>')
 nmap('<leader>hp', ':Gitsigns preview_hunk<cr>')
 
