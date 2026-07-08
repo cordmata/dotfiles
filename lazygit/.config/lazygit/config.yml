@@ -1,2 +1,0 @@
-services:
-  'code.experian.local': 'bitbucketServer:code.experian.local'
