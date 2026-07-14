@@ -13,6 +13,11 @@ nmap('<c-j>', ':bn <cr>')
 nmap('<c-k>', ':bp <cr>')
 nmap('<c-c>', ':bd <cr>')
 
+-- tab navigation
+nmap('<a-j>', ':tabnext <cr>')
+nmap('<a-k>', ':tabprevious <cr>')
+nmap('<a-c>', ':tabclose <cr>')
+
 -- filesystem browse
 nmap('<leader>-', ':Oil --preview<cr>')
 
@@ -33,11 +38,6 @@ nmap(']c', ':Gitsigns next_hunk<cr>')
 nmap('[c', ':Gitsigns prev_hunk<cr>')
 nmap('<leader>hs', ':Gitsigns stage_hunk<cr>')
 nmap('<leader>hp', ':Gitsigns preview_hunk<cr>')
-
--- tabs
-nmap('<leader>tn', ':tabnext<cr>')
-nmap('<leader>tp', ':tabprevious<cr>')
-nmap('<leader>tc', ':tabclose<cr>')
 
 -- common fuzzy-finders
 nmap('<leader>fr', fzf.resume)
@@ -72,7 +72,7 @@ nmap('<leader>cv', ':FzfLua files cwd=$HOME/.config/nvim<cr>')
 nmap('<leader>cf', ':FzfLua files cwd=$HOME/.config/fish<cr>')
 
 -- diagnostics
-nmap('<leader>dd', vim.diagnostic.open_float)
+nmap('<leader>dd', vim.diagnostic.setqflist)
 nmap('<leader>ds', vim.diagnostic.show)
 nmap('<leader>dh', vim.diagnostic.hide)
 
