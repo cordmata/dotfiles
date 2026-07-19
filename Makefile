@@ -1,5 +1,5 @@
 deps:
-	brew install stow neovim fish fzf fd ripgrep bat starship zoxide mise jesseduffield/lazygit/lazygit tree-sitter-cli
+	brew install stow neovim fish fzf fd ripgrep bat starship zoxide mise tree-sitter-cli
 
 install:
 	touch "${HOME}/.hushlogin"
@@ -23,8 +23,6 @@ install:
 	stow editorconfig
 	stow intellij
 	stow starship
-	stow ghostty
-	stow lazygit
 	stow ripgrep
 
 	mkdir -p "${HOME}/.config/ghostty"
