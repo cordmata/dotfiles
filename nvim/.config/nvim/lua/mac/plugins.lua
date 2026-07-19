@@ -22,6 +22,12 @@ vim.pack.add  {
     { src = 'https://github.com/ibhagwan/fzf-lua' },
 }
 
+if (vim.env.base16_fish_shell_background == 'dark') then
+    vim.cmd("colorscheme base16-catppuccin-frappe")
+else
+    vim.cmd("colorscheme base16-catppuccin-latte")
+end
+
 require("lualine").setup()
 require("oil").setup()
 
