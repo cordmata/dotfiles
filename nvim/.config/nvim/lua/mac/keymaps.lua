@@ -14,9 +14,12 @@ nmap('<c-k>', ':bp <cr>')
 nmap('<c-c>', ':bd <cr>')
 
 -- tab navigation
-nmap('<a-j>', ':tabnext <cr>')
-nmap('<a-k>', ':tabprevious <cr>')
-nmap('<a-c>', ':tabclose <cr>')
+nmap('<a-j>', '<c-w>j')
+nmap('<a-k>', '<c-w>k')
+nmap('<a-h>', '<c-w>h')
+nmap('<a-l>', '<c-w>l')
+nmap('<a-p>', '<c-w>p')
+nmap('<a-n>', '<c-w>w')
 
 -- filesystem browse
 nmap('<leader>-', ':Oil --preview<cr>')
