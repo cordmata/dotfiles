@@ -2,7 +2,7 @@ vim.cmd.packadd("nvim.undotree")
 vim.pack.add  {
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
     { src = 'https://github.com/editorconfig/editorconfig-vim' },
-    { src = 'https://github.com/RRethy/nvim-base16' },
+    { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
     { src = 'https://github.com/sindrets/diffview.nvim' },
     { src = 'https://github.com/tpope/vim-fugitive' },
     { src = 'https://github.com/tpope/vim-commentary' },
@@ -22,14 +22,17 @@ vim.pack.add  {
     { src = 'https://github.com/ibhagwan/fzf-lua' },
 }
 
-if (vim.env.base16_fish_shell_background == 'dark') then
-    vim.cmd("colorscheme base16-catppuccin-frappe")
-else
-    vim.cmd("colorscheme base16-catppuccin-latte")
-end
-
 require("lualine").setup()
 require("oil").setup()
+
+require("catppuccin").setup({
+    flavour = "auto",
+    background = {
+        light = "latte",
+        dark = "frappe",
+    },
+})
+vim.cmd.colorscheme "catppuccin-nvim"
 
 local cmp = require('blink.cmp')
 cmp.setup({
