@@ -5,6 +5,8 @@ set -gx LENS_DISABLE_GPU true
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep.conf"
 
+fish_config theme choose catppuccin-frappe
+
 fish_add_path /usr/local/bin
 fish_add_path /usr/local/sbin
 fish_add_path /opt/homebrew/bin
@@ -63,11 +65,6 @@ abbr -a gwr git worktree remove
 abbr -a gwl git worktree list
 
 abbr -a cdd cd "$HOME/.dotfiles"
-
-function theme
-    set _theme (functions | grep base16- | fzf)
-    $_theme
-end
 
 # open a directory in $HOME/code with vscode using a fuzzy finder
 function co
