@@ -7,7 +7,7 @@ format = """
 command_timeout = 2000
 
 [kubernetes]
-disabled = false
+disabled = true
 format = 'as [$symbol$context( \($namespace\))]($style)'
 
 [status]
