@@ -13,7 +13,7 @@ nmap('<c-j>', ':bn <cr>')
 nmap('<c-k>', ':bp <cr>')
 nmap('<c-c>', ':bd <cr>')
 
--- tab navigation
+-- window navigation
 nmap('<a-j>', '<c-w>j')
 nmap('<a-k>', '<c-w>k')
 nmap('<a-h>', '<c-w>h')
