@@ -1,5 +1,4 @@
-local fzf = require('fzf-lua')
-local map = vim.keymap.set
+local fzf = require('fzf-lua') local map = vim.keymap.set
 
 local opt_defaults = { silent = true, noremap = true }
 
@@ -21,7 +20,7 @@ nmap('<a-l>', '<c-w>l')
 nmap('<a-p>', '<c-w>p')
 nmap('<a-n>', '<c-w>w')
 
-- tab navigation
+-- tab navigation
 nmap('<leader>tn', ':tabnext<cr>')
 nmap('<leader>tp', ':tabprevious<cr>')
 nmap('<leader>tc', ':tabclose<cr>')
