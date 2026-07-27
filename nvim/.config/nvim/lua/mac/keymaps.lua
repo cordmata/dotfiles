@@ -107,6 +107,9 @@ nmap('<leader>md', ':term glow %<cr>')
 -- enable/disable inline spell checking
 nmap('<leader>ss', ':set invspell<cr>')
 
+-- toggle word wrap
+nmap('<leader>ww', ':set wrap!<cr>')
+
 -- list all fuzzy-find tools available
 nmap('<leader>zz', ':FzfLua<cr>')
 
