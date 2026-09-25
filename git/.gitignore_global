@@ -23,3 +23,5 @@ _*.http
 mise.local.toml
 .claude/worktrees/
 .claude/commands/standards-review.md
+
+**/.claude/settings.local.json

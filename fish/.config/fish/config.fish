@@ -1,3 +1,7 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/mcordial/.docker/bin"
+# End of Docker Desktop section.
+
 set -gx EDITOR nvim
 set -gx PAGER less -r
 set -gx VAULT_SKIP_VERIFY 1
@@ -65,6 +69,8 @@ abbr -a gwr git worktree remove
 abbr -a gwl git worktree list
 
 abbr -a cdd cd "$HOME/.dotfiles"
+
+abbr -a console granted console
 
 # open a directory in $HOME/code with vscode using a fuzzy finder
 function co
