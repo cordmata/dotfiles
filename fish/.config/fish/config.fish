@@ -71,6 +71,7 @@ abbr -a gwl git worktree list
 abbr -a cdd cd "$HOME/.dotfiles"
 
 abbr -a console granted console
+abbr -a zed mise x -- zed
 
 # open a directory in $HOME/code with vscode using a fuzzy finder
 function co
