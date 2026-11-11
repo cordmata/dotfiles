@@ -1,15 +1,13 @@
 deps:
-	brew install stow neovim fish fzf fd ripgrep bat starship zoxide mise tree-sitter-cli
+	brew install stow neovim fzf fd ripgrep bat starship zoxide mise tree-sitter-cli
 
 install:
 	touch "${HOME}/.hushlogin"
 	mkdir -p "${HOME}/bin"
 	mkdir -p "${HOME}/.config/nvim/lua"
-	stow nvim
 
-	mkdir -p "${HOME}/.config/fish/functions"
-	mkdir -p "${HOME}/.config/fish/conf.d"
-	stow fish
+	stow zsh
+	stow nvim
 
 	stow git
 	git config --global core.excludesFile "$$HOME/.gitignore_global"
@@ -32,6 +30,6 @@ install:
 	stow fd
 
 	stow vault
-	echo "token_helper = \"${HOME}/bin/vault-token-helper\"" >> "$$HOME/.vault"
+	# echo "token_helper = \"${HOME}/bin/vault-token-helper\"" >> "$$HOME/.vault"
 
 .phony: install deps
