@@ -5,7 +5,6 @@ install:
 	touch "${HOME}/.hushlogin"
 	mkdir -p "${HOME}/bin"
 	mkdir -p "${HOME}/.config/nvim/lua"
-	mkdir -p "${HOME}/.config/zsh/functions"
 
 	stow zsh
 	stow nvim

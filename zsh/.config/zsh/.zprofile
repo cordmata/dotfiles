@@ -5,6 +5,6 @@ path+=(
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(mise activate zsh --shims)"
 
-if [ -f "$HOME/.zprofile.local.zsh" ]; then
-  source "$HOME/.zprofile.local.zsh"
+if [ -f "$ZDOTDIR/.zprofile.local.zsh" ]; then
+  source "$ZDOTDIR/.zprofile.local.zsh"
 fi

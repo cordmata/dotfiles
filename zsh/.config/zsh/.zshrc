@@ -22,15 +22,18 @@ alias cat="bat"
 alias vim="nvim"
 alias cd="z"
 
-alias gfa="git fetch --all --prune --jobs=10"
-
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 
 autoload -Uz abbr
-abbr gst="git status" tf="terraform"
+
+abbr tf="terraform"
 abbr dstop='docker stop $(docker ps -aq)'
+
+abbr gco="git switch"
+abbr gst="git status"
+abbr gfa="git fetch --all --prune --jobs=10"
 
 if ((${+aliases[run-help]})); then unalias run-help; fi
 autoload -Uz run-help
@@ -39,6 +42,6 @@ alias help='run-help'
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 
-if [ -f "$HOME/.zshrc.local.zsh" ]; then
-  source "$HOME/.zshrc.local.zsh"
+if [ -f "$ZDOTDIR/.zshrc.local.zsh" ]; then
+  source "$ZDOTDIR/.zshrc.local.zsh"
 fi

@@ -1,2 +1,4 @@
 .DS_Store
-config/nvim/lua/mac/local.lua
+*local.*
+.zcompdump
+.zsh_history
