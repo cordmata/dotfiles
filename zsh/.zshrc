@@ -2,6 +2,7 @@ bindkey -e
 
 fpath+=(
     "$HOME/.local/share/zsh/site-functions"
+    "$XDG_CONFIG_HOME/zsh/functions"
 )
 
 path+=(
@@ -26,6 +27,10 @@ alias gfa="git fetch --all --prune --jobs=10"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
+
+autoload -Uz abbr
+abbr gst="git status" tf="terraform"
+abbr dstop='docker stop $(docker ps -aq)'
 
 if ((${+aliases[run-help]})); then unalias run-help; fi
 autoload -Uz run-help

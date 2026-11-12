@@ -1,0 +1,33 @@
+# Fish-style abbreviations: expand in place on space/enter (command position only).
+# Usage: abbr gst="git status" tf="terraform"
+typeset -gA abbrs
+abbr() { local a; for a; do abbrs[${a%%=*}]=${a#*=}; done }
+
+_abbr_expand() {
+  [[ $LBUFFER =~ '(^|[;|&])[[:space:]]*([[:alnum:]_-]+)$' ]] || return 0
+  local word=${match[2]}
+  (( ${+abbrs[$word]} )) && LBUFFER=${LBUFFER%$word}${abbrs[$word]}
+  return 0
+}
+
+_abbr_space() {
+    _abbr_expand; zle self-insert
+}
+
+_abbr_enter() {
+    _abbr_expand; zle accept-line
+}
+
+_abbr_no_expand() {
+    LBUFFER+=' '
+}
+
+zle -N _abbr_space; zle -N _abbr_enter; zle -N _abbr_no_expand
+bindkey ' '  _abbr_space
+bindkey '^M' _abbr_enter
+bindkey '^J' _abbr_enter
+bindkey '^ ' _abbr_no_expand          # ctrl-space: literal space, no expansion
+bindkey -M isearch ' ' self-insert    # keep space working inside ctrl-r search
+
+# First (autoloaded) call only runs this file to set things up; hand its arguments to the real function.
+abbr "$@"
