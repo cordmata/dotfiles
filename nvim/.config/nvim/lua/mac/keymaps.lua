@@ -80,7 +80,7 @@ nmap('<leader>ca', fzf.lsp_code_actions)
 nmap('<leader>ch', fzf.command_history)
 nmap('<leader>cr', vim.lsp.buf.rename)
 nmap('<leader>cv', ':FzfLua files cwd=$HOME/.config/nvim<cr>')
-nmap('<leader>cf', ':FzfLua files cwd=$HOME/.config/fish<cr>')
+nmap('<leader>cz', ':e $ZDOTDIR<cr>')
 
 -- diagnostics
 nmap('<leader>dd', vim.diagnostic.setqflist)

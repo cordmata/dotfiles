@@ -23,7 +23,11 @@ vim.pack.add  {
 }
 
 require("lualine").setup()
-require("oil").setup()
+require("oil").setup({
+    view_options = {
+        show_hidden = true,
+    }
+})
 
 require("catppuccin").setup({
     flavour = "auto",
