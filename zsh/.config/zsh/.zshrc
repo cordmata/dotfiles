@@ -22,7 +22,14 @@ if ((${+aliases[run-help]})); then unalias run-help; fi
 autoload -Uz run-help
 alias help='run-help'
 
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+# Regenerate .zcompdump only once every 24 hours (-C skips security/fpath checks)
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
+
 zstyle ':completion:*' menu select
 
 if [ -f "$ZDOTDIR/.zshrc.local.zsh" ]; then
