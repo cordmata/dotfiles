@@ -1,6 +1,8 @@
 
+export ZSH_COMP_DIR="$HOME/.local/share/zsh/site-functions"
+
 fpath+=(
-    "$HOME/.local/share/zsh/site-functions"
+    "$ZSH_COMP_DIR"
     "$XDG_CONFIG_HOME/zsh/functions"
 )
 
